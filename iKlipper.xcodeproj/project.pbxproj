@@ -1,0 +1,456 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3471D02829FCB54100C3BDB9 /* iKlipperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D02729FCB54100C3BDB9 /* iKlipperApp.swift */; };
+		3471D02C29FCB54400C3BDB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3471D02B29FCB54400C3BDB9 /* Assets.xcassets */; };
+		3471D02F29FCB54400C3BDB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3471D02E29FCB54400C3BDB9 /* Preview Assets.xcassets */; };
+		3471D03629FCB5DB00C3BDB9 /* BottomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D03529FCB5DB00C3BDB9 /* BottomNavBar.swift */; };
+		3471D03829FCB5FB00C3BDB9 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D03729FCB5FB00C3BDB9 /* MainScreen.swift */; };
+		3471D03A29FCB61600C3BDB9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D03929FCB61600C3BDB9 /* Settings.swift */; };
+		3471D03E29FCB64C00C3BDB9 /* PrinterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D03D29FCB64C00C3BDB9 /* PrinterList.swift */; };
+		3471D04029FCB66800C3BDB9 /* AddNewPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D03F29FCB66800C3BDB9 /* AddNewPrinter.swift */; };
+		3471D04229FCB67600C3BDB9 /* EditPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04129FCB67600C3BDB9 /* EditPrinter.swift */; };
+		3471D04429FCB68D00C3BDB9 /* DefaultView Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04329FCB68D00C3BDB9 /* DefaultView Class.swift */; };
+		3471D04729FCB6C400C3BDB9 /* SelectFileToPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04629FCB6C400C3BDB9 /* SelectFileToPrint.swift */; };
+		3471D04B29FCB6E700C3BDB9 /* Printer Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04A29FCB6E700C3BDB9 /* Printer Class.swift */; };
+		3471D04D29FCB6F800C3BDB9 /* PrinterInfo Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04C29FCB6F800C3BDB9 /* PrinterInfo Class.swift */; };
+		3471D05129FCB72600C3BDB9 /* POST Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05029FCB72600C3BDB9 /* POST Functions.swift */; };
+		3471D05329FCB73800C3BDB9 /* GET Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05229FCB73800C3BDB9 /* GET Functions.swift */; };
+		3471D05629FCB75E00C3BDB9 /* GET Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05529FCB75E00C3BDB9 /* GET Structs.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3471D02429FCB54100C3BDB9 /* iKlipper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iKlipper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3471D02729FCB54100C3BDB9 /* iKlipperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iKlipperApp.swift; sourceTree = "<group>"; };
+		3471D02B29FCB54400C3BDB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3471D02E29FCB54400C3BDB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3471D03529FCB5DB00C3BDB9 /* BottomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavBar.swift; sourceTree = "<group>"; };
+		3471D03729FCB5FB00C3BDB9 /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		3471D03929FCB61600C3BDB9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		3471D03D29FCB64C00C3BDB9 /* PrinterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterList.swift; sourceTree = "<group>"; };
+		3471D03F29FCB66800C3BDB9 /* AddNewPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPrinter.swift; sourceTree = "<group>"; };
+		3471D04129FCB67600C3BDB9 /* EditPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPrinter.swift; sourceTree = "<group>"; };
+		3471D04329FCB68D00C3BDB9 /* DefaultView Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultView Class.swift"; sourceTree = "<group>"; };
+		3471D04629FCB6C400C3BDB9 /* SelectFileToPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFileToPrint.swift; sourceTree = "<group>"; };
+		3471D04A29FCB6E700C3BDB9 /* Printer Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Printer Class.swift"; sourceTree = "<group>"; };
+		3471D04C29FCB6F800C3BDB9 /* PrinterInfo Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrinterInfo Class.swift"; sourceTree = "<group>"; };
+		3471D05029FCB72600C3BDB9 /* POST Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "POST Functions.swift"; sourceTree = "<group>"; };
+		3471D05229FCB73800C3BDB9 /* GET Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GET Functions.swift"; sourceTree = "<group>"; };
+		3471D05529FCB75E00C3BDB9 /* GET Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GET Structs.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3471D02129FCB54100C3BDB9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3471D01B29FCB54100C3BDB9 = {
+			isa = PBXGroup;
+			children = (
+				3471D02629FCB54100C3BDB9 /* iKlipper */,
+				3471D02529FCB54100C3BDB9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3471D02529FCB54100C3BDB9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3471D02429FCB54100C3BDB9 /* iKlipper.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3471D02629FCB54100C3BDB9 /* iKlipper */ = {
+			isa = PBXGroup;
+			children = (
+				3471D02729FCB54100C3BDB9 /* iKlipperApp.swift */,
+				3471D03529FCB5DB00C3BDB9 /* BottomNavBar.swift */,
+				3471D03729FCB5FB00C3BDB9 /* MainScreen.swift */,
+				3471D04329FCB68D00C3BDB9 /* DefaultView Class.swift */,
+				3471D04829FCB6CC00C3BDB9 /* Network */,
+				3471D04529FCB6AB00C3BDB9 /* Print */,
+				3471D03B29FCB62500C3BDB9 /* Settings */,
+				3471D02B29FCB54400C3BDB9 /* Assets.xcassets */,
+				3471D02D29FCB54400C3BDB9 /* Preview Content */,
+			);
+			path = iKlipper;
+			sourceTree = "<group>";
+		};
+		3471D02D29FCB54400C3BDB9 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3471D02E29FCB54400C3BDB9 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3471D03B29FCB62500C3BDB9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3471D03C29FCB63800C3BDB9 /* PrinterList */,
+				3471D03929FCB61600C3BDB9 /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		3471D03C29FCB63800C3BDB9 /* PrinterList */ = {
+			isa = PBXGroup;
+			children = (
+				3471D03D29FCB64C00C3BDB9 /* PrinterList.swift */,
+				3471D03F29FCB66800C3BDB9 /* AddNewPrinter.swift */,
+				3471D04129FCB67600C3BDB9 /* EditPrinter.swift */,
+			);
+			path = PrinterList;
+			sourceTree = "<group>";
+		};
+		3471D04529FCB6AB00C3BDB9 /* Print */ = {
+			isa = PBXGroup;
+			children = (
+				3471D04629FCB6C400C3BDB9 /* SelectFileToPrint.swift */,
+			);
+			path = Print;
+			sourceTree = "<group>";
+		};
+		3471D04829FCB6CC00C3BDB9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				3471D04E29FCB70D00C3BDB9 /* Moonraker */,
+				3471D04929FCB6D500C3BDB9 /* Printers */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		3471D04929FCB6D500C3BDB9 /* Printers */ = {
+			isa = PBXGroup;
+			children = (
+				3471D04A29FCB6E700C3BDB9 /* Printer Class.swift */,
+				3471D04C29FCB6F800C3BDB9 /* PrinterInfo Class.swift */,
+			);
+			path = Printers;
+			sourceTree = "<group>";
+		};
+		3471D04E29FCB70D00C3BDB9 /* Moonraker */ = {
+			isa = PBXGroup;
+			children = (
+				3471D05429FCB74C00C3BDB9 /* Structs */,
+				3471D04F29FCB71600C3BDB9 /* Functions */,
+			);
+			path = Moonraker;
+			sourceTree = "<group>";
+		};
+		3471D04F29FCB71600C3BDB9 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				3471D05029FCB72600C3BDB9 /* POST Functions.swift */,
+				3471D05229FCB73800C3BDB9 /* GET Functions.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
+		3471D05429FCB74C00C3BDB9 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				3471D05529FCB75E00C3BDB9 /* GET Structs.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3471D02329FCB54100C3BDB9 /* iKlipper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3471D03229FCB54400C3BDB9 /* Build configuration list for PBXNativeTarget "iKlipper" */;
+			buildPhases = (
+				3471D02029FCB54100C3BDB9 /* Sources */,
+				3471D02129FCB54100C3BDB9 /* Frameworks */,
+				3471D02229FCB54100C3BDB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iKlipper;
+			productName = iKlipper;
+			productReference = 3471D02429FCB54100C3BDB9 /* iKlipper.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3471D01C29FCB54100C3BDB9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					3471D02329FCB54100C3BDB9 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = 3471D01F29FCB54100C3BDB9 /* Build configuration list for PBXProject "iKlipper" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3471D01B29FCB54100C3BDB9;
+			productRefGroup = 3471D02529FCB54100C3BDB9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3471D02329FCB54100C3BDB9 /* iKlipper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3471D02229FCB54100C3BDB9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3471D02F29FCB54400C3BDB9 /* Preview Assets.xcassets in Resources */,
+				3471D02C29FCB54400C3BDB9 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3471D02029FCB54100C3BDB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3471D03829FCB5FB00C3BDB9 /* MainScreen.swift in Sources */,
+				3471D04029FCB66800C3BDB9 /* AddNewPrinter.swift in Sources */,
+				3471D03E29FCB64C00C3BDB9 /* PrinterList.swift in Sources */,
+				3471D04229FCB67600C3BDB9 /* EditPrinter.swift in Sources */,
+				3471D04729FCB6C400C3BDB9 /* SelectFileToPrint.swift in Sources */,
+				3471D04D29FCB6F800C3BDB9 /* PrinterInfo Class.swift in Sources */,
+				3471D04429FCB68D00C3BDB9 /* DefaultView Class.swift in Sources */,
+				3471D04B29FCB6E700C3BDB9 /* Printer Class.swift in Sources */,
+				3471D03629FCB5DB00C3BDB9 /* BottomNavBar.swift in Sources */,
+				3471D03A29FCB61600C3BDB9 /* Settings.swift in Sources */,
+				3471D05129FCB72600C3BDB9 /* POST Functions.swift in Sources */,
+				3471D05329FCB73800C3BDB9 /* GET Functions.swift in Sources */,
+				3471D05629FCB75E00C3BDB9 /* GET Structs.swift in Sources */,
+				3471D02829FCB54100C3BDB9 /* iKlipperApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3471D03029FCB54400C3BDB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3471D03129FCB54400C3BDB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3471D03329FCB54400C3BDB9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iKlipper/Preview Content\"";
+				DEVELOPMENT_TEAM = 834WJG58A6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = RafaelNeuwirthSwierczynski.iKlipper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3471D03429FCB54400C3BDB9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iKlipper/Preview Content\"";
+				DEVELOPMENT_TEAM = 834WJG58A6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = RafaelNeuwirthSwierczynski.iKlipper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3471D01F29FCB54100C3BDB9 /* Build configuration list for PBXProject "iKlipper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3471D03029FCB54400C3BDB9 /* Debug */,
+				3471D03129FCB54400C3BDB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3471D03229FCB54400C3BDB9 /* Build configuration list for PBXNativeTarget "iKlipper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3471D03329FCB54400C3BDB9 /* Debug */,
+				3471D03429FCB54400C3BDB9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3471D01C29FCB54100C3BDB9 /* Project object */;
+}
