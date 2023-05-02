@@ -25,12 +25,25 @@ struct PrinterList: View {
         selectedPrinter.id = printer.id
     }
     
+    var activeName: String {
+        for printer in printerInfo.printers {
+            if printerInfo.main.name == printer.name {
+                return printer.name
+            }
+        }
+        return "None"
+    }
+    
     var body: some View {
         
         VStack {
             
             Text ("Printers")
                 .font(.system(size: 50))
+            
+            Text ("Active: \(activeName)")
+                .font(.system(size: 19))
+                .foregroundColor(.gray)
             
             ScrollView {
                 

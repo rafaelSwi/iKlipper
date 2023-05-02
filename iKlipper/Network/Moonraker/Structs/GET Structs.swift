@@ -1,6 +1,6 @@
 import Foundation
-/*
-final class NetworkStruct {
+
+final class Network {
     
     struct AvailableFiles: Codable {
         
@@ -45,4 +45,4 @@ final class NetworkStruct {
     }
     
 }
-*/
+

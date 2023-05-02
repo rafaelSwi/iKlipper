@@ -28,7 +28,7 @@ struct MainScreen: View {
             }
             
             .fullScreenCover(isPresented: $wantToPrint) {
-                // SelectFileToPrint()
+                SelectFileToPrint()
             }
             
         }

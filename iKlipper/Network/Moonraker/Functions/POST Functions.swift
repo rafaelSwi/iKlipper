@@ -1,5 +1,5 @@
 import Foundation
-/*
+
 final class POST {
     
     struct JSON <T: Codable> : Codable {
@@ -43,40 +43,11 @@ final class POST {
         }
     }
     
-    final class Printer {
-        
-        static func emergencyStop () async throws {
-            
-            let json = POST.JSON <String> (
-                method: "printer.emergency_stop",
-                id: 4564,
-                params: nil
-            )
-            
-            guard let encoded = try? JSONEncoder().encode(json) else {
-                print ("[printer.emergency_stop] FAILED TO ENCODE")
-                return
-            }
-            
-            let url = URL(string: "\(PrinterInfo.host)/printer/emergency_stop")!
-            var request = URLRequest(url: url)
-            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-            request.httpMethod = "POST"
-            
-            do {
-                let (data, _) = try await URLSession.shared.upload(for: request, from: encoded)
-                print (data)
-            }
-            
-        }
-        
-    }
-    
     final class Print {
         
-        static func pause () async throws -> Bool {
+        static func pause (pr: Printer) async throws -> Bool {
             
-            let url = URL(string: "\(PrinterInfo.host)/printer/print/pause")!
+            let url = URL(string: "\(pr.host)/printer/print/pause")!
             let json = POST.JSON <String> (
                 method: "printer.print.pause",
                 id: 4564,
@@ -87,9 +58,9 @@ final class POST {
             
         }
         
-        static func resume () async throws -> Bool {
+        static func resume (pr: Printer) async throws -> Bool {
             
-            let url = URL(string: "\(PrinterInfo.host)/printer/print/resume")!
+            let url = URL(string: "\(pr.host)/printer/print/resume")!
             let json = POST.JSON <String> (
                 method: "printer.print.resume",
                 id: 1465,
@@ -100,9 +71,9 @@ final class POST {
             
         }
         
-        static func cancel () async throws -> Bool {
+        static func cancel (pr: Printer) async throws -> Bool {
             
-            let url = URL(string: "\(PrinterInfo.host)/printer/print/cancel")!
+            let url = URL(string: "\(pr.host)/printer/print/cancel")!
             
             let json = POST.JSON <String> (
                 method: "printer.print.cancel",
@@ -114,9 +85,9 @@ final class POST {
             
         }
         
-        static func printfilename (_ filename: String) async throws -> Bool {
+        static func printfilename (_ filename: String, pr: Printer) async throws -> Bool {
             
-            let url = URL(string: "\(PrinterInfo.host)/printer/print/start?filename=\(filename)")!
+            let url = URL(string: "\(pr.host)/printer/print/start?filename=\(filename)")!
             
             struct params: Codable {
                 var filename: String
@@ -136,9 +107,34 @@ final class POST {
     
     final class Machine {
         
-        static func shutdown () async throws -> Bool {
+        static func emergencyStop (pr: Printer) async throws {
             
-            let url = URL(string: "\(PrinterInfo.host)/machine/shutdown")!
+            let json = POST.JSON <String> (
+                method: "printer.emergency_stop",
+                id: 4564,
+                params: nil
+            )
+            
+            guard let encoded = try? JSONEncoder().encode(json) else {
+                print ("[printer.emergency_stop] FAILED TO ENCODE")
+                return
+            }
+            
+            let url = URL(string: "\(pr.host)/printer/emergency_stop")!
+            var request = URLRequest(url: url)
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpMethod = "POST"
+            
+            do {
+                let (data, _) = try await URLSession.shared.upload(for: request, from: encoded)
+                print (data)
+            }
+            
+        }
+        
+        static func shutdown (pr: Printer) async throws -> Bool {
+            
+            let url = URL(string: "\(pr.host)/machine/shutdown")!
             let json = POST.JSON <String> (
                 method: "machine.shutdown",
                 id: 4665,
@@ -149,9 +145,9 @@ final class POST {
             
         }
         
-        static func reboot () async throws -> Bool {
+        static func reboot (pr: Printer) async throws -> Bool {
             
-            let url = URL(string: "\(PrinterInfo.host)/machine/reboot")!
+            let url = URL(string: "\(pr.host)/machine/reboot")!
             let json = POST.JSON <String> (
                 method: "machine.reboot",
                 id: 4665,
@@ -165,9 +161,9 @@ final class POST {
     
     final class Server {
         
-        static func restart () async throws -> Bool {
+        static func restart (pr: Printer) async throws -> Bool {
             
-            let url = URL(string: "\(PrinterInfo.host)/server/restart")!
+            let url = URL(string: "\(pr.host)/server/restart")!
             let json = POST.JSON <String> (
                 method: "server.restart",
                 id: 4656,
@@ -181,4 +177,4 @@ final class POST {
     }
     
 }
-*/
+

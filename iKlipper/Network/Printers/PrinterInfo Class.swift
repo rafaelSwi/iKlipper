@@ -12,7 +12,7 @@ final public class PrinterInfo: ObservableObject {
     }
     
     func isMain (_ printer: Printer) -> Bool {
-        if printer.id == main.id {
+        if printer.id == main.id && printer.name == main.name {
             return true
         } else {
             return false

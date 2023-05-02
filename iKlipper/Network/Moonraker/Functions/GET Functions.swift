@@ -1,5 +1,5 @@
 import Foundation
-/*
+
 final class GET {
     
     static func performRequest (method: String, url: URL) async throws -> Data {
@@ -15,21 +15,21 @@ final class GET {
     
     final class Server {
         
-        static func filesList () async throws -> [NetworkStruct.AvailableFiles.Result] {
+        static func filesList (pr: Printer) async throws -> [Network.AvailableFiles.Result] {
             
-            let url = URL(string: "\(PrinterInfo.host)/server/files/list")!
+            let url = URL(string: "\(pr.host)/server/files/list")!
             
             let data: Data = try await GET.performRequest(method: "server.files.list", url: url)
 
-            let decodedData = try JSONDecoder().decode(NetworkStruct.AvailableFiles.self, from: data)
+            let decodedData = try JSONDecoder().decode(Network.AvailableFiles.self, from: data)
             
             return decodedData.result
             
         }
         
-        static func temperatureStore () async throws -> NetworkStruct.TemperatureStore.Result {
+        static func temperatureStore (pr: Printer) async throws -> Network.TemperatureStore.Result {
             
-            let url = URL(string: "\(PrinterInfo.host)/server/temperature_store")!
+            let url = URL(string: "\(pr.host)/server/temperature_store")!
             
             let data: Data = try await GET.performRequest(method: "server.temperature_store", url: url)
             
@@ -37,7 +37,7 @@ final class GET {
             
             decoder.keyDecodingStrategy = .convertFromSnakeCase
 
-            let decodedData = try decoder.decode(NetworkStruct.TemperatureStore.self, from: data)
+            let decodedData = try decoder.decode(Network.TemperatureStore.self, from: data)
             
             print ("[*] INFO: \(decodedData.result.temperatureFan.temperatures)")
             
@@ -49,4 +49,4 @@ final class GET {
     
     
 }
- */
+ 

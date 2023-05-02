@@ -12,7 +12,7 @@ final public class Printer: ObservableObject, Identifiable {
     
     @Published public var id: UUID = UUID()
     
-    func host () -> String {
+    var host: String {
         switch self.https {
         case true:  return "https://\(self.ip)"
         case false: return "http://\(self.ip)"

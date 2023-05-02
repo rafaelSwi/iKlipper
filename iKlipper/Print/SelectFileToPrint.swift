@@ -1,12 +1,14 @@
 import SwiftUI
-/*
+
 struct SelectFileToPrint: View {
     
     @Environment (\.presentationMode) var presentationMode
     
-    @State private var listOfFiles: [NetworkStruct.AvailableFiles.Result] = []
+    @EnvironmentObject var printerInfo: PrinterInfo
     
-    @State private var fullFileList: [NetworkStruct.AvailableFiles.Result] = []
+    @State private var listOfFiles: [Network.AvailableFiles.Result] = []
+    
+    @State private var fullFileList: [Network.AvailableFiles.Result] = []
     
     @State private var wantToFetchFiles: Bool = false
     
@@ -87,7 +89,9 @@ struct SelectFileToPrint: View {
 
 fileprivate struct FileFetchLoadingScreen: View {
     
-    @Binding var listOfFiles: [NetworkStruct.AvailableFiles.Result]
+    @Binding var listOfFiles: [Network.AvailableFiles.Result]
+    
+    @EnvironmentObject var printerInfo: PrinterInfo
     
     @State var ready: Bool = false
     
@@ -98,7 +102,7 @@ fileprivate struct FileFetchLoadingScreen: View {
                 .animation(.spring())
                 .onAppear(perform: {
                     Task {
-                        listOfFiles = try await GET.Server.filesList()
+                        listOfFiles = try await GET.Server.filesList(pr: printerInfo.main)
                         if !listOfFiles.isEmpty {
                             ready.toggle()
                         }
@@ -122,7 +126,7 @@ fileprivate struct FileListView: View {
     
     @Environment (\.presentationMode) var presentationMode
     
-    @Binding var listOfFiles: [NetworkStruct.AvailableFiles.Result]
+    @Binding var listOfFiles: [Network.AvailableFiles.Result]
     
     var body: some View {
         
@@ -151,7 +155,7 @@ fileprivate struct FileListView: View {
 
 fileprivate struct ItemBox: View {
     
-    @State var file: NetworkStruct.AvailableFiles.Result
+    @State var file: Network.AvailableFiles.Result
     
     @State var wantToPrint: Bool = false
     
@@ -194,7 +198,9 @@ fileprivate struct AreYouSurePrint: View {
     
     @Environment (\.presentationMode) var presentationMode
     
-    @State var file: NetworkStruct.AvailableFiles.Result
+    @EnvironmentObject var printerInfo: PrinterInfo
+    
+    @State var file: Network.AvailableFiles.Result
     
     let dateFormatter: DateFormatter = {
             let formatter = DateFormatter()
@@ -231,7 +237,7 @@ fileprivate struct AreYouSurePrint: View {
             
             Button(action: {
                 Task {
-                    try await POST.Print.printfilename(self.file.path)
+                    try await POST.Print.printfilename(self.file.path, pr: printerInfo.main)
                 }
             }) {
                 DefaultView.Custom.IconButton(systemName: "printer", w: 350, h: 70, cr: 28)
@@ -247,4 +253,4 @@ fileprivate struct AreYouSurePrint: View {
         
     }
 }
-*/
+
