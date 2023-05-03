@@ -18,7 +18,7 @@ final class GET {
         static func filesList (pr: Printer) async throws -> [Network.AvailableFiles.Result] {
             
             let url = URL(string: "\(pr.host)/server/files/list")!
-            
+            print (pr.host)
             let data: Data = try await GET.performRequest(method: "server.files.list", url: url)
 
             let decodedData = try JSONDecoder().decode(Network.AvailableFiles.self, from: data)

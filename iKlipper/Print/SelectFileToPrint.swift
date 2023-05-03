@@ -12,11 +12,13 @@ struct SelectFileToPrint: View {
     
     @State private var wantToFetchFiles: Bool = false
     
+    @State fileprivate var prefix: Prefix = .internal
+    
     func cleanBothLists () {
         fullFileList.removeAll()
         listOfFiles.removeAll()
     }
-  
+    
     var body: some View {
         
         Spacer()
@@ -43,24 +45,16 @@ struct SelectFileToPrint: View {
                     .frame(width: 80, height: 80)
                     .onTapGesture {
                         cleanBothLists()
+                        self.prefix = .internal
                         wantToFetchFiles.toggle()
-                        for item in fullFileList {
-                            if !item.path.hasPrefix("USB") {
-                                listOfFiles.append(item)
-                            }
-                        }
                     }
                 
                 Image(systemName: "cable.connector")
                     .frame(width: 80, height: 80)
                     .onTapGesture {
                         cleanBothLists()
-                            wantToFetchFiles.toggle()
-                            for item in fullFileList {
-                                if item.path.hasPrefix("USB") {
-                                    listOfFiles.append(item)
-                                }
-                        }
+                        self.prefix = .usb
+                        wantToFetchFiles.toggle()
                     }
                 
                 
@@ -71,7 +65,7 @@ struct SelectFileToPrint: View {
             .padding(.all)
             
             .fullScreenCover(isPresented: $wantToFetchFiles) {
-                FileFetchLoadingScreen(listOfFiles: $fullFileList)
+                FileFetchLoadingScreen(fullFileList: $fullFileList, listOfFiles: $listOfFiles, prefix: $prefix)
             }
             
         }
@@ -89,23 +83,32 @@ struct SelectFileToPrint: View {
 
 fileprivate struct FileFetchLoadingScreen: View {
     
+    @Binding var fullFileList: [Network.AvailableFiles.Result]
+    
     @Binding var listOfFiles: [Network.AvailableFiles.Result]
+    
+    @Binding fileprivate var prefix: Prefix
     
     @EnvironmentObject var printerInfo: PrinterInfo
     
     @State var ready: Bool = false
     
     var body: some View {
-
+        
         if !ready {
             DefaultView.LoadingSpin()
-                .animation(.spring())
                 .onAppear(perform: {
                     Task {
-                        listOfFiles = try await GET.Server.filesList(pr: printerInfo.main)
-                        if !listOfFiles.isEmpty {
-                            ready.toggle()
+                        fullFileList = try await GET.Server.filesList(pr: printerInfo.main)
+                        for item in fullFileList {
+                            if prefix == .internal && !item.path.hasPrefix("USB") {
+                                listOfFiles.append(item)
+                            }
+                            if prefix == .usb && item.path.hasPrefix("USB") {
+                                listOfFiles.append(item)
+                            }
                         }
+                        ready.toggle()
                     }
                 })
         }
@@ -159,17 +162,6 @@ fileprivate struct ItemBox: View {
     
     @State var wantToPrint: Bool = false
     
-    func goodLookingName(_ name: String) -> String {
-        var result = name
-        if let index = result.range(of: ".", options: .backwards)?.lowerBound {
-            result = String(result[..<index])
-        }
-        result = result.replacingOccurrences(of: "_", with: " ")
-        result = result.replacingOccurrences(of: "USB/", with: "")
-        return result.capitalized
-    }
-
-    
     var body: some View {
         
         HStack {
@@ -203,11 +195,11 @@ fileprivate struct AreYouSurePrint: View {
     @State var file: Network.AvailableFiles.Result
     
     let dateFormatter: DateFormatter = {
-            let formatter = DateFormatter()
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .medium
-            return formatter
-        }()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        return formatter
+    }()
     
     var body: some View {
         
@@ -221,7 +213,7 @@ fileprivate struct AreYouSurePrint: View {
                     .font(.system(size: 135))
                     .padding(.bottom)
                 
-                Text ("\(self.file.path)")
+                Text ("\(goodLookingName(self.file.path))")
                 
                 Text ("Last Modification:\n\(dateFormatter.string(from: Date(timeIntervalSince1970: file.modified)))")
                     .padding(.all)
@@ -254,3 +246,19 @@ fileprivate struct AreYouSurePrint: View {
     }
 }
 
+fileprivate func goodLookingName(_ name: String) -> String {
+    var result = name
+    if let index = result.range(of: ".", options: .backwards)?.lowerBound {
+        result = String(result[..<index])
+    }
+    result = result.replacingOccurrences(of: "_", with: " ")
+    result = result.replacingOccurrences(of: "USB/", with: "")
+    result = result.replacingOccurrences(of: "/", with: " > ")
+    result = result.replacingOccurrences(of: "?", with: "")
+    return result.capitalized
+}
+
+fileprivate enum Prefix {
+    case `internal`
+    case usb
+}
