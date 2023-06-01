@@ -21,10 +21,10 @@ struct BottomNavBar: View {
                         Text("Print")
                     }
                 
-                Text ("Actions")
+                PrintingScreen()
                     .tabItem {
                         Image(systemName: "hand.point.up.braille.fill")
-                        Text("Print")
+                        Text("Control")
                     }
                 
             }

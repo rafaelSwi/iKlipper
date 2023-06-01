@@ -23,6 +23,7 @@
 		3471D05129FCB72600C3BDB9 /* POST Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05029FCB72600C3BDB9 /* POST Functions.swift */; };
 		3471D05329FCB73800C3BDB9 /* GET Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05229FCB73800C3BDB9 /* GET Functions.swift */; };
 		3471D05629FCB75E00C3BDB9 /* GET Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05529FCB75E00C3BDB9 /* GET Structs.swift */; };
+		34C5D7462A291E8D006D3937 /* PrintingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C5D7452A291E8D006D3937 /* PrintingScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		3471D05029FCB72600C3BDB9 /* POST Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "POST Functions.swift"; sourceTree = "<group>"; };
 		3471D05229FCB73800C3BDB9 /* GET Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GET Functions.swift"; sourceTree = "<group>"; };
 		3471D05529FCB75E00C3BDB9 /* GET Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GET Structs.swift"; sourceTree = "<group>"; };
+		34C5D7452A291E8D006D3937 /* PrintingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				3471D02729FCB54100C3BDB9 /* iKlipperApp.swift */,
 				3471D03529FCB5DB00C3BDB9 /* BottomNavBar.swift */,
 				3471D03729FCB5FB00C3BDB9 /* MainScreen.swift */,
+				34C5D7452A291E8D006D3937 /* PrintingScreen.swift */,
 				3471D04329FCB68D00C3BDB9 /* DefaultView Class.swift */,
 				3471D04829FCB6CC00C3BDB9 /* Network */,
 				3471D04529FCB6AB00C3BDB9 /* Print */,
@@ -251,6 +254,7 @@
 				3471D05329FCB73800C3BDB9 /* GET Functions.swift in Sources */,
 				3471D05629FCB75E00C3BDB9 /* GET Structs.swift in Sources */,
 				3471D02829FCB54100C3BDB9 /* iKlipperApp.swift in Sources */,
+				34C5D7462A291E8D006D3937 /* PrintingScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
