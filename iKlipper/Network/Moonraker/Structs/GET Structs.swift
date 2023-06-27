@@ -18,26 +18,36 @@ final class Network {
     
     struct TemperatureStore: Codable {
         
-        struct Extruder: Codable {
-            let temperatures: [Double]
-            let targets: [Double]
-            let powers: [Double]
-        }
-
-        struct TemperatureFan: Codable {
-            let temperatures: [Double]
-            let targets: [Double]
-            let speeds: [Double]
-        }
-
-        struct TemperatureSensor: Codable {
-            let temperatures: [Double]
-        }
-
         struct Result: Codable {
-            let extruder: Extruder
+            
+            struct HeaterBed: Codable {
+                let temperatures: [Double]
+                let targets: [Double]
+                let powers: [Double]
+            }
+            
+            struct TemperatureFan: Codable {
+                let temperatures: [Double]
+                let targets: [Double]
+                let speeds: [Double]
+            }
+            
+            struct Extruder: Codable {
+                let temperatures: [Double]
+                let targets: [Double]
+                let powers: [Double]
+            }
+            
+            let heaterBed: HeaterBed
             let temperatureFan: TemperatureFan
-            let temperatureSensor: TemperatureSensor
+            let extruder: Extruder
+            
+            enum CodingKeys: String, CodingKey {
+                case heaterBed = "heater_bed"
+                case temperatureFan = "temperature_fan chamber_fan"
+                case extruder = "extruder"
+            }
+            
         }
         
         let result: Result

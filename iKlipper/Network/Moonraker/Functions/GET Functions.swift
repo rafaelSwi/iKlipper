@@ -34,12 +34,8 @@ final class GET {
             let data: Data = try await GET.performRequest(method: "server.temperature_store", url: url)
             
             let decoder = JSONDecoder()
-            
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
 
             let decodedData = try decoder.decode(Network.TemperatureStore.self, from: data)
-            
-            print ("[*] INFO: \(decodedData.result.temperatureFan.temperatures)")
             
             return decodedData.result
             
