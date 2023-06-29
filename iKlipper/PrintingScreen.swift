@@ -4,6 +4,8 @@ struct PrintingScreen: View {
     
     @EnvironmentObject var printerInfo: PrinterInfo
     
+    @State var viewCamera: Bool = false
+    
     var body: some View {
         
         VStack {
@@ -78,6 +80,14 @@ struct PrintingScreen: View {
                 h: 50,
                 cr: 12
             )
+            .onTapGesture {
+                viewCamera.toggle()
+            }
+            
+            
+            .fullScreenCover(isPresented: $viewCamera) {
+                WebcamView()
+            }
             
             Spacer()
             

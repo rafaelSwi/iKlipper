@@ -12,7 +12,8 @@ struct PrinterList: View {
         name: "NO_NAME",
         ip: "NO_IP",
         port: 0,
-        https: false
+        https: false,
+        model: .x1
     )
     
     @State var mainPrinterId: UUID = UUID()
@@ -99,7 +100,7 @@ struct PrinterList: View {
                 cr: 34
             )
             .onTapGesture {
-                printerInfo.addPrinter(Printer(name: "PD01", ip: "172.16.0.13", port: 80, https: false))
+                printerInfo.addPrinter(Printer(name: "PD01", ip: "172.16.0.13", port: 80, https: false, model: .x1))
             }
             
             DefaultView.ReturnButton()

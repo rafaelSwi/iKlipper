@@ -8,7 +8,17 @@ struct EditPrinter: View {
     
     @FocusState private var typingFocused: Bool
     
+    @State private var models: [Printer.Model] = [.x1, .x2]
+    
     @EnvironmentObject var printerInfo: PrinterInfo
+    
+    func emptyFields () -> Bool {
+        if printer.name == "" || printer.ip == "" {
+            return true
+        } else {
+            return false
+        }
+    }
     
     var body: some View {
         
@@ -31,7 +41,6 @@ struct EditPrinter: View {
             TextField("IP Address", text: $printer.ip)
                 .focused($typingFocused)
                 .textFieldStyle(AddPrinterTextFieldStyle())
-                .keyboardType(.numberPad)
                 .padding(.top)
             Rectangle()
                 .frame(width: 180, height: 1)
@@ -61,6 +70,16 @@ struct EditPrinter: View {
             .padding(.all)
         }
         
+        Group {
+            Picker ("Model", selection: $printer.model) {
+                ForEach(models, id: \.self) { model in
+                    Text ("\(model.rawValue)")
+                }
+            }
+            .pickerStyle(.segmented)
+            .frame(width: 130)
+        }
+        
         Spacer()
         
         if !typingFocused {
@@ -83,8 +102,10 @@ struct EditPrinter: View {
                 cr: 28
             )
                 .onTapGesture {
-                    printerInfo.rmPreviousAddNew(printer)
-                    presentationMode.wrappedValue.dismiss()
+                    if !emptyFields() {
+                        printerInfo.rmPreviousAddNew(printer)
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
         }
             

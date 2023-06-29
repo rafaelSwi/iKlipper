@@ -73,4 +73,21 @@ final class DefaultView {
         }
     }
     
+    struct TemperatureRectangle: View {
+        var temperature: Temp
+        var body: some View {
+            HStack {
+                Rectangle()
+                    .frame(width: 9, height: 78)
+                    .foregroundColor(temperature.color)
+                Text (temperature.name)
+                    .font(.system(size: 28).bold())
+                    .padding(.horizontal)
+                Text ("\(Int(temperature.tempValues.last ?? 0.0))")
+                    .font(.system(size: 28))
+                Spacer()
+            }
+        }
+    }
+    
 }

@@ -34,6 +34,7 @@ final public class PrinterInfo: ObservableObject {
             printers[index].port = printer.port
             printers[index].https = printer.https
             printers[index].id = printer.id
+            printers[index].model = printer.model
         }
     }
     

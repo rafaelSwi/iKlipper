@@ -4,11 +4,21 @@ struct AddNewPrinter: View {
     
     @Environment (\.presentationMode) var presentationMode
     
-    @State var printer = Printer(name: "", ip: "", port: 80, https: false)
+    @State var printer = Printer(name: "", ip: "", port: 80, https: false, model: .x1)
+    
+    @State private var models: [Printer.Model] = [.x1, .x2]
     
     @FocusState private var typingFocused: Bool
     
     @EnvironmentObject var printerInfo: PrinterInfo
+    
+    func emptyFields () -> Bool {
+        if printer.name == "" || printer.ip == "" {
+            return true
+        } else {
+            return false
+        }
+    }
     
     var body: some View {
         
@@ -31,7 +41,6 @@ struct AddNewPrinter: View {
             TextField("IP Address", text: $printer.ip)
                 .focused($typingFocused)
                 .textFieldStyle(AddPrinterTextFieldStyle())
-                .keyboardType(.numberPad)
                 .padding(.top)
             Rectangle()
                 .frame(width: 180, height: 1)
@@ -61,13 +70,28 @@ struct AddNewPrinter: View {
             .padding(.all)
         }
         
+        Group {
+            Text ("Syncraft Model")
+                .font(.system(size: 22))
+                .fontWeight(.thin)
+            Picker ("Model", selection: $printer.model) {
+                ForEach(models, id: \.self) { model in
+                    Text ("\(model.rawValue)")
+                }
+            }
+            .pickerStyle(.segmented)
+            .frame(width: 130)
+        }
+        
         Spacer()
         
         if !typingFocused {
             DefaultView.Custom.IconTextButton(text: "Add Printer", systemName: "plus", w: 280, h: 40, cr: 28)
                 .onTapGesture {
-                    printerInfo.addPrinter(self.printer)
-                    presentationMode.wrappedValue.dismiss()
+                    if !emptyFields() {
+                        printerInfo.addPrinter(self.printer)
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 }
         }
             
