@@ -16,10 +16,10 @@
 		3471D03E29FCB64C00C3BDB9 /* PrinterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D03D29FCB64C00C3BDB9 /* PrinterList.swift */; };
 		3471D04029FCB66800C3BDB9 /* AddNewPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D03F29FCB66800C3BDB9 /* AddNewPrinter.swift */; };
 		3471D04229FCB67600C3BDB9 /* EditPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04129FCB67600C3BDB9 /* EditPrinter.swift */; };
-		3471D04429FCB68D00C3BDB9 /* DefaultView Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04329FCB68D00C3BDB9 /* DefaultView Class.swift */; };
+		3471D04429FCB68D00C3BDB9 /* DefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04329FCB68D00C3BDB9 /* DefaultView.swift */; };
 		3471D04729FCB6C400C3BDB9 /* SelectFileToPrint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04629FCB6C400C3BDB9 /* SelectFileToPrint.swift */; };
-		3471D04B29FCB6E700C3BDB9 /* Printer Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04A29FCB6E700C3BDB9 /* Printer Class.swift */; };
-		3471D04D29FCB6F800C3BDB9 /* PrinterInfo Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04C29FCB6F800C3BDB9 /* PrinterInfo Class.swift */; };
+		3471D04B29FCB6E700C3BDB9 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04A29FCB6E700C3BDB9 /* Printer.swift */; };
+		3471D04D29FCB6F800C3BDB9 /* PrinterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D04C29FCB6F800C3BDB9 /* PrinterInfo.swift */; };
 		3471D05129FCB72600C3BDB9 /* POST Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05029FCB72600C3BDB9 /* POST Functions.swift */; };
 		3471D05329FCB73800C3BDB9 /* GET Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05229FCB73800C3BDB9 /* GET Functions.swift */; };
 		3471D05629FCB75E00C3BDB9 /* GET Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05529FCB75E00C3BDB9 /* GET Structs.swift */; };
@@ -27,7 +27,7 @@
 		6FBFD2792A4C87DE003C3A68 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFD2782A4C87DE003C3A68 /* Temp.swift */; };
 		6FEA2B622A4DF6F5005EB585 /* ImageStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA2B612A4DF6F4005EB585 /* ImageStream.swift */; };
 		6FEA2B642A4DFBF4005EB585 /* WebcamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA2B632A4DFBF4005EB585 /* WebcamView.swift */; };
-		6FEA2B662A4E0421005EB585 /* Class Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA2B652A4E0421005EB585 /* Class Settings.swift */; };
+		6FEA2B662A4E0421005EB585 /* MainSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA2B652A4E0421005EB585 /* MainSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,10 +41,10 @@
 		3471D03D29FCB64C00C3BDB9 /* PrinterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterList.swift; sourceTree = "<group>"; };
 		3471D03F29FCB66800C3BDB9 /* AddNewPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPrinter.swift; sourceTree = "<group>"; };
 		3471D04129FCB67600C3BDB9 /* EditPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPrinter.swift; sourceTree = "<group>"; };
-		3471D04329FCB68D00C3BDB9 /* DefaultView Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultView Class.swift"; sourceTree = "<group>"; };
+		3471D04329FCB68D00C3BDB9 /* DefaultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultView.swift; sourceTree = "<group>"; };
 		3471D04629FCB6C400C3BDB9 /* SelectFileToPrint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFileToPrint.swift; sourceTree = "<group>"; };
-		3471D04A29FCB6E700C3BDB9 /* Printer Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Printer Class.swift"; sourceTree = "<group>"; };
-		3471D04C29FCB6F800C3BDB9 /* PrinterInfo Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrinterInfo Class.swift"; sourceTree = "<group>"; };
+		3471D04A29FCB6E700C3BDB9 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
+		3471D04C29FCB6F800C3BDB9 /* PrinterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterInfo.swift; sourceTree = "<group>"; };
 		3471D05029FCB72600C3BDB9 /* POST Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "POST Functions.swift"; sourceTree = "<group>"; };
 		3471D05229FCB73800C3BDB9 /* GET Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GET Functions.swift"; sourceTree = "<group>"; };
 		3471D05529FCB75E00C3BDB9 /* GET Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GET Structs.swift"; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		6FBFD2782A4C87DE003C3A68 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
 		6FEA2B612A4DF6F4005EB585 /* ImageStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStream.swift; sourceTree = "<group>"; };
 		6FEA2B632A4DFBF4005EB585 /* WebcamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebcamView.swift; sourceTree = "<group>"; };
-		6FEA2B652A4E0421005EB585 /* Class Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Class Settings.swift"; sourceTree = "<group>"; };
+		6FEA2B652A4E0421005EB585 /* MainSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,18 +86,12 @@
 			isa = PBXGroup;
 			children = (
 				3471D02729FCB54100C3BDB9 /* iKlipperApp.swift */,
-				3471D03529FCB5DB00C3BDB9 /* BottomNavBar.swift */,
-				3471D03729FCB5FB00C3BDB9 /* MainScreen.swift */,
-				6FEA2B602A4DF6E3005EB585 /* Views */,
-				34C5D7452A291E8D006D3937 /* PrintingScreen.swift */,
-				6FEA2B632A4DFBF4005EB585 /* WebcamView.swift */,
-				3471D04329FCB68D00C3BDB9 /* DefaultView Class.swift */,
-				6FBFD2772A4C87CF003C3A68 /* Model */,
-				3471D04829FCB6CC00C3BDB9 /* Network */,
-				3471D04529FCB6AB00C3BDB9 /* Print */,
-				3471D03B29FCB62500C3BDB9 /* Settings */,
 				3471D02B29FCB54400C3BDB9 /* Assets.xcassets */,
+				6FDA20402A4F339600E6355A /* Classes */,
+				6FBFD2772A4C87CF003C3A68 /* Model */,
+				3471D04E29FCB70D00C3BDB9 /* Moonraker */,
 				3471D02D29FCB54400C3BDB9 /* Preview Content */,
+				6FEA2B602A4DF6E3005EB585 /* Views */,
 			);
 			path = iKlipper;
 			sourceTree = "<group>";
@@ -113,45 +107,16 @@
 		3471D03B29FCB62500C3BDB9 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				3471D03C29FCB63800C3BDB9 /* PrinterList */,
-				3471D03929FCB61600C3BDB9 /* Settings.swift */,
-				6FEA2B652A4E0421005EB585 /* Class Settings.swift */,
+				6FEA2B652A4E0421005EB585 /* MainSettings.swift */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		3471D03C29FCB63800C3BDB9 /* PrinterList */ = {
-			isa = PBXGroup;
-			children = (
-				3471D03D29FCB64C00C3BDB9 /* PrinterList.swift */,
-				3471D03F29FCB66800C3BDB9 /* AddNewPrinter.swift */,
-				3471D04129FCB67600C3BDB9 /* EditPrinter.swift */,
-			);
-			path = PrinterList;
-			sourceTree = "<group>";
-		};
-		3471D04529FCB6AB00C3BDB9 /* Print */ = {
-			isa = PBXGroup;
-			children = (
-				3471D04629FCB6C400C3BDB9 /* SelectFileToPrint.swift */,
-			);
-			path = Print;
-			sourceTree = "<group>";
-		};
-		3471D04829FCB6CC00C3BDB9 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				3471D04E29FCB70D00C3BDB9 /* Moonraker */,
-				3471D04929FCB6D500C3BDB9 /* Printers */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		3471D04929FCB6D500C3BDB9 /* Printers */ = {
 			isa = PBXGroup;
 			children = (
-				3471D04A29FCB6E700C3BDB9 /* Printer Class.swift */,
-				3471D04C29FCB6F800C3BDB9 /* PrinterInfo Class.swift */,
+				3471D04A29FCB6E700C3BDB9 /* Printer.swift */,
+				3471D04C29FCB6F800C3BDB9 /* PrinterInfo.swift */,
 			);
 			path = Printers;
 			sourceTree = "<group>";
@@ -190,10 +155,85 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		6FEA2B602A4DF6E3005EB585 /* Views */ = {
+		6FDA20392A4F31DB00E6355A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
 				6FEA2B612A4DF6F4005EB585 /* ImageStream.swift */,
+				3471D04329FCB68D00C3BDB9 /* DefaultView.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6FDA203A2A4F321300E6355A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6FDA203E2A4F32A600E6355A /* Settings */,
+				6FDA203D2A4F328200E6355A /* Print */,
+				6FDA203C2A4F324400E6355A /* Webcam */,
+				6FDA203B2A4F322B00E6355A /* Main */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6FDA203B2A4F322B00E6355A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				34C5D7452A291E8D006D3937 /* PrintingScreen.swift */,
+				3471D03729FCB5FB00C3BDB9 /* MainScreen.swift */,
+				3471D03529FCB5DB00C3BDB9 /* BottomNavBar.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		6FDA203C2A4F324400E6355A /* Webcam */ = {
+			isa = PBXGroup;
+			children = (
+				6FEA2B632A4DFBF4005EB585 /* WebcamView.swift */,
+			);
+			path = Webcam;
+			sourceTree = "<group>";
+		};
+		6FDA203D2A4F328200E6355A /* Print */ = {
+			isa = PBXGroup;
+			children = (
+				3471D04629FCB6C400C3BDB9 /* SelectFileToPrint.swift */,
+			);
+			path = Print;
+			sourceTree = "<group>";
+		};
+		6FDA203E2A4F32A600E6355A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				6FDA203F2A4F32BF00E6355A /* Printers */,
+				3471D03929FCB61600C3BDB9 /* Settings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		6FDA203F2A4F32BF00E6355A /* Printers */ = {
+			isa = PBXGroup;
+			children = (
+				3471D03D29FCB64C00C3BDB9 /* PrinterList.swift */,
+				3471D03F29FCB66800C3BDB9 /* AddNewPrinter.swift */,
+				3471D04129FCB67600C3BDB9 /* EditPrinter.swift */,
+			);
+			path = Printers;
+			sourceTree = "<group>";
+		};
+		6FDA20402A4F339600E6355A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3471D03B29FCB62500C3BDB9 /* Settings */,
+				3471D04929FCB6D500C3BDB9 /* Printers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6FEA2B602A4DF6E3005EB585 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6FDA203A2A4F321300E6355A /* Views */,
+				6FDA20392A4F31DB00E6355A /* Classes */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,12 +312,12 @@
 				6FEA2B642A4DFBF4005EB585 /* WebcamView.swift in Sources */,
 				3471D04029FCB66800C3BDB9 /* AddNewPrinter.swift in Sources */,
 				3471D03E29FCB64C00C3BDB9 /* PrinterList.swift in Sources */,
-				6FEA2B662A4E0421005EB585 /* Class Settings.swift in Sources */,
+				6FEA2B662A4E0421005EB585 /* MainSettings.swift in Sources */,
 				3471D04229FCB67600C3BDB9 /* EditPrinter.swift in Sources */,
 				3471D04729FCB6C400C3BDB9 /* SelectFileToPrint.swift in Sources */,
-				3471D04D29FCB6F800C3BDB9 /* PrinterInfo Class.swift in Sources */,
-				3471D04429FCB68D00C3BDB9 /* DefaultView Class.swift in Sources */,
-				3471D04B29FCB6E700C3BDB9 /* Printer Class.swift in Sources */,
+				3471D04D29FCB6F800C3BDB9 /* PrinterInfo.swift in Sources */,
+				3471D04429FCB68D00C3BDB9 /* DefaultView.swift in Sources */,
+				3471D04B29FCB6E700C3BDB9 /* Printer.swift in Sources */,
 				3471D03629FCB5DB00C3BDB9 /* BottomNavBar.swift in Sources */,
 				3471D03A29FCB61600C3BDB9 /* Settings.swift in Sources */,
 				3471D05129FCB72600C3BDB9 /* POST Functions.swift in Sources */,
