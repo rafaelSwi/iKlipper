@@ -9,6 +9,8 @@ struct WebcamView: View {
     
     @ObservedObject var webcam = ImageStream()
     
+    @State var viewInFullScreen: Bool = false
+    
     var activeName: String {
         for printer in printerInfo.printers {
             if printerInfo.main.name == printer.name {
@@ -16,6 +18,13 @@ struct WebcamView: View {
             }
         }
         return "None"
+    }
+    
+    func play () {
+        webcam.play (
+            url: URL(string: printerInfo.main.webcam)!,
+            timeInterval: settings.camPerformance.time
+        )
     }
     
     var body: some View {
@@ -38,12 +47,37 @@ struct WebcamView: View {
                     .resizable()
                     .frame(width: 330, height: 165)
                     .onAppear {
-                        webcam.play (
-                            url: URL(string: printerInfo.main.webcam)!,
-                            timeInterval: settings.camPerformance.time
-                        )
+                        play()
                     }
                 
+            }
+            
+            DefaultView.Custom.IconTextButton (
+                text: "Reload Connection",
+                systemName: "arrow.clockwise",
+                w: 235,
+                h: 45,
+                cr: 28
+            )
+            .padding(.all)
+            .onTapGesture {
+                webcam.stop()
+                play()
+            }
+            
+            DefaultView.Custom.IconTextButton (
+                text: "View in Full Screen",
+                systemName: "ipad.landscape.badge.play",
+                w: 235,
+                h: 45,
+                cr: 28
+            )
+            .onTapGesture {
+                webcam.stop()
+                viewInFullScreen.toggle()
+            }
+            .fullScreenCover(isPresented: $viewInFullScreen) {
+                FullScreenWebcam()
             }
             
             Spacer()

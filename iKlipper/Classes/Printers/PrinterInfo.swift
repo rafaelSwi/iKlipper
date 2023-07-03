@@ -51,5 +51,13 @@ final public class PrinterInfo: ObservableObject {
         }
     }
     
+    func printerAmount () -> Int {
+        var i: Int = 0
+        for _ in printers {
+            i += 1
+        }
+        return i
+    }
+    
 }
 

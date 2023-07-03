@@ -15,16 +15,10 @@ struct BottomNavBar: View {
                         Text("Settings")
                     }
                 
-                MainScreen()
+                MainScreenLoader()
                     .tabItem {
                         Image(systemName: "cube.transparent")
-                        Text("Print")
-                    }
-                
-                PrintingScreen()
-                    .tabItem {
-                        Image(systemName: "hand.point.up.braille.fill")
-                        Text("Control")
+                        Text("Printer")
                     }
                 
             }

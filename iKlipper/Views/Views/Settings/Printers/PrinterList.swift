@@ -100,7 +100,8 @@ struct PrinterList: View {
                 cr: 34
             )
             .onTapGesture {
-                printerInfo.addPrinter(Printer(name: "PD01", ip: "172.16.0.13", port: 80, https: false, model: .x1))
+                printerInfo.addPrinter(Printer(name: "PD01", ip: "pd01.local", port: 80, https: false, model: .x1))
+                printerInfo.addPrinter(Printer(name: "SCX12", ip: "scx10012.local", port: 80, https: false, model: .x1))
             }
             
             DefaultView.ReturnButton()

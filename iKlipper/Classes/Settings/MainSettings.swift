@@ -26,7 +26,7 @@ final public class MainSettings: ObservableObject {
         ),
         WebcamPerformance (
             time: 0.1,
-            name: "Maximum",
+            name: "Max",
             description: "Use as much data as possible."
         ),
     ]

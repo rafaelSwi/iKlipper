@@ -1,10 +1,12 @@
 import SwiftUI
 
-struct MainScreen: View {
+struct OperationalScreen: View {
     
     @EnvironmentObject var printerInfo: PrinterInfo
     
     @State var wantToPrint: Bool = false
+    @State var wantToMove: Bool = false
+    @State var wantToViewCam: Bool = false
     
     @State var temp: [String: [Double]] = [
         "extruder": [],
@@ -23,8 +25,7 @@ struct MainScreen: View {
         VStack {
             
             Spacer ()
-        
-            
+                .frame(height: 15)
             
             ForEach(temperatures) { temperature in
                 DefaultView.TemperatureRectangle(temperature: temperature)
@@ -38,6 +39,36 @@ struct MainScreen: View {
                     }
                     temperatures = [extruder, heaterBed, chamberFan]
                 }
+            }
+            
+            Spacer()
+
+            DefaultView.Custom.IconTextButton (
+                text: "Camera",
+                systemName: "camera.aperture",
+                w: 235,
+                h: 45,
+                cr: 28
+            )
+            .onTapGesture {
+                wantToViewCam.toggle()
+            }
+            .fullScreenCover(isPresented: $wantToViewCam) {
+                WebcamView()
+            }
+            
+            DefaultView.Custom.IconTextButton (
+                    text: "Move",
+                    systemName: "arrow.up.and.down.and.arrow.left.and.right",
+                    w: 235,
+                    h: 45,
+                    cr: 28
+                )
+            .onTapGesture {
+                wantToMove.toggle()
+            }
+            .fullScreenCover(isPresented: $wantToMove) {
+                // code here to view the moving tab
             }
             
             Button(action: {

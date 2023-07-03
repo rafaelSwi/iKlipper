@@ -19,6 +19,23 @@ final public class Printer: ObservableObject, Identifiable {
     
     @Published public var id: UUID = UUID()
     
+    func state () async throws -> PrinterState.State {
+        
+        var printer_state = try await GET.API.jobStatus(pr: self).state
+        
+        switch printer_state {
+            
+        case PrinterState.State.operational.rawValue:
+            return PrinterState.State.operational
+        case PrinterState.State.printing.rawValue:
+            return PrinterState.State.printing
+        default:
+            return PrinterState.State.offline
+            
+        }
+        
+    }
+    
     var host: String {
         switch self.https {
         case true:  return "https://\(self.ip)"

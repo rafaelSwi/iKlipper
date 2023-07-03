@@ -107,6 +107,34 @@ final class POST {
     
     final class Machine {
         
+        static func sendGCode (_ gcode: String, pr: Printer) async throws {
+            
+            let json = POST.JSON <String> (
+                method: "printer.gcode.script",
+                id: 7466,
+                params: nil
+            )
+            
+            guard let encoded = try? JSONEncoder().encode(json) else {
+                print ("[printer.sendGCode] FAILED TO ENCODE")
+                return
+            }
+            
+            var components = URLComponents(string: "\(pr.host)")!
+            components.path = "/printer/gcode/script"
+            components.queryItems = [
+                URLQueryItem(name: "script", value: "\(gcode)"),
+            ]
+            if let url = components.url {
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+                do {
+                    let (_, _) = try await URLSession.shared.upload(for: request, from: encoded)
+                }
+            }
+            
+        }
+        
         static func emergencyStop (pr: Printer) async throws {
             
             let json = POST.JSON <String> (

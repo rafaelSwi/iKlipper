@@ -54,5 +54,53 @@ final class Network {
         
     }
     
+    struct JobStatus: Codable {
+        
+        struct Job: Codable {
+            
+            struct File: Codable {
+                let name: String?
+            }
+            struct Filament: Codable {
+                let length: Double?
+            }
+            let file: File
+            let estimatedPrintTime: Double?
+            let filament: Filament
+            let user: String?
+            
+        }
+        
+        struct Progress: Codable {
+            let completion: Double?
+            let filepos: Int?
+            let printTime: Int?
+            let printTimeLeft: Int?
+            let printTimeOrigin: String?
+        }
+        let job: Job
+        let progress: Progress
+        let state: String
+        
+    }
+    
 }
 
+/*
+ {
+     "job": {
+         "file": {"name": null},
+         "estimatedPrintTime": null,
+         "filament": {"length": null},
+         "user": null
+     },
+     "progress": {
+         "completion": null,
+         "filepos": null,
+         "printTime": null,
+         "printTimeLeft": null,
+         "printTimeOrigin": null
+     },
+     "state": "Offline"
+ }
+ */
