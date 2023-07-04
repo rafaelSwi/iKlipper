@@ -8,7 +8,7 @@ struct BottomNavBar: View {
         NavigationView {
             
             TabView {
-
+                
                 Settings()
                     .tabItem {
                         Image(systemName: "gearshape")
@@ -20,7 +20,6 @@ struct BottomNavBar: View {
                         Image(systemName: "cube.transparent")
                         Text("Printer")
                     }
-                
             }
         }
     }

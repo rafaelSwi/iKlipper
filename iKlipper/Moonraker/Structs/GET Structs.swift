@@ -54,6 +54,38 @@ final class Network {
         
     }
     
+    struct PrintStats: Codable {
+        
+        struct Result: Codable {
+            
+            struct Status: Codable {
+                
+                struct VirtualSdcard: Codable {
+                    var file_path: String
+                    var file_size: Double
+                    var progress: Double
+                }
+                
+                struct PrintStats: Codable {
+                    var filename: String
+                    var total_duration: Double
+                    var print_duration: Double
+                    var filament_used: Double
+                }
+                
+                var virtual_sdcard: VirtualSdcard
+                var print_stats: PrintStats
+                
+            }
+            
+            var status: Status
+            
+        }
+        
+        var result: Result
+        
+    }
+    
     struct JobStatus: Codable {
         
         struct Job: Codable {
@@ -85,22 +117,3 @@ final class Network {
     }
     
 }
-
-/*
- {
-     "job": {
-         "file": {"name": null},
-         "estimatedPrintTime": null,
-         "filament": {"length": null},
-         "user": null
-     },
-     "progress": {
-         "completion": null,
-         "filepos": null,
-         "printTime": null,
-         "printTimeLeft": null,
-         "printTimeOrigin": null
-     },
-     "state": "Offline"
- }
- */

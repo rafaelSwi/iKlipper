@@ -63,9 +63,6 @@ struct Settings: View {
                     .multilineTextAlignment(.center)
                 
             }
-            
         }
-        
-        
     }
 }

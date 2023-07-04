@@ -19,7 +19,7 @@ struct iKlipperApp: App {
                     .accentColor(.white)
                     .environmentObject(printerInfo)
                     .environmentObject(settings)
-
+                
             }
         }
         

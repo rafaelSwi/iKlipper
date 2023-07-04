@@ -80,9 +80,9 @@ struct PrinterList: View {
                                 DefaultView.Custom.IconButton(systemName: "plus.diamond", w: 75, h: 50, cr: 12)
                             }
                         }
-                        
-                    } .frame(height: 50)
-                    
+                    }
+                    .frame(height: 50)
+                    .padding(.horizontal)
                 }
             }
             
@@ -102,16 +102,15 @@ struct PrinterList: View {
             .onTapGesture {
                 printerInfo.addPrinter(Printer(name: "PD01", ip: "pd01.local", port: 80, https: false, model: .x1))
                 printerInfo.addPrinter(Printer(name: "SCX12", ip: "scx10012.local", port: 80, https: false, model: .x1))
+                printerInfo.addPrinter(Printer(name: "SCX_LOCAL", ip: "scx.local", port: 80, https: false, model: .x1))
+                printerInfo.addPrinter(Printer(name: "ghost", ip: "127.0.0.1", port: 80, https: false, model: .x1))
             }
             
             DefaultView.ReturnButton()
                 .onTapGesture {
                     presentationMode.wrappedValue.dismiss()
                 }
-            
         }
-        
-        
     }
 }
 
@@ -133,15 +132,14 @@ fileprivate struct PrinterBox: View {
             
             Spacer()
             
-            Button (action: {
+            DefaultView.Custom.IconButton (
+                systemName: "pencil",
+                w: 50,
+                h: 50,
+                cr: 12
+            )
+            .onTapGesture {
                 wantToEditPrinter.toggle()
-            }) {
-                DefaultView.Custom.IconButton (
-                    systemName: "pencil",
-                    w: 50,
-                    h: 50,
-                    cr: 12
-                )
             }
             
             Button (action: {
@@ -156,6 +154,5 @@ fileprivate struct PrinterBox: View {
             }
             
         } .frame(height: 50)
-        
     }
 }

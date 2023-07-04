@@ -21,7 +21,7 @@ final public class Printer: ObservableObject, Identifiable {
     
     func state () async throws -> PrinterState.State {
         
-        var printer_state = try await GET.API.jobStatus(pr: self).state
+        let printer_state = try await GET.API.jobStatus(pr: self).state
         
         switch printer_state {
             
@@ -57,5 +57,4 @@ final public class Printer: ObservableObject, Identifiable {
         self.https = https
         self.model = model
     }
-    
 }

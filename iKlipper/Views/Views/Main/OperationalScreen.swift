@@ -3,6 +3,7 @@ import SwiftUI
 struct OperationalScreen: View {
     
     @EnvironmentObject var printerInfo: PrinterInfo
+    @Binding var state: PrinterState.State
     
     @State var wantToPrint: Bool = false
     @State var wantToMove: Bool = false
@@ -33,16 +34,17 @@ struct OperationalScreen: View {
                 Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
                     Task {
                         let pr = printerInfo.main
-                        extruder.tempValues = try await GET.Server.temperatureStore(pr: pr).extruder.temperatures
-                        heaterBed.tempValues = try await GET.Server.temperatureStore(pr: pr).heaterBed.temperatures
-                        chamberFan.tempValues = try await GET.Server.temperatureStore(pr: pr).temperatureFan.temperatures
+                        state = try await pr.state()
+                        extruder.tempValues = try await GET.Server.tempStore(pr: pr).extruder.temperatures
+                        heaterBed.tempValues = try await GET.Server.tempStore(pr: pr).heaterBed.temperatures
+                        chamberFan.tempValues = try await GET.Server.tempStore(pr: pr).temperatureFan.temperatures
                     }
                     temperatures = [extruder, heaterBed, chamberFan]
                 }
             }
             
             Spacer()
-
+            
             DefaultView.Custom.IconTextButton (
                 text: "Camera",
                 systemName: "camera.aperture",
@@ -58,12 +60,12 @@ struct OperationalScreen: View {
             }
             
             DefaultView.Custom.IconTextButton (
-                    text: "Move",
-                    systemName: "arrow.up.and.down.and.arrow.left.and.right",
-                    w: 235,
-                    h: 45,
-                    cr: 28
-                )
+                text: "Move",
+                systemName: "arrow.up.and.down.and.arrow.left.and.right",
+                w: 235,
+                h: 45,
+                cr: 28
+            )
             .onTapGesture {
                 wantToMove.toggle()
             }
@@ -71,21 +73,15 @@ struct OperationalScreen: View {
                 // code here to view the moving tab
             }
             
-            Button(action: {
-                wantToPrint.toggle()
-            }) {
-                DefaultView.Custom.IconButton(systemName: "printer", w: 350, h: 70, cr: 28)
-                    .padding(.all)
-            }
+            DefaultView.Custom.IconButton(systemName: "printer", w: 350, h: 70, cr: 28)
+                .padding(.all)
+                .onTapGesture {
+                    wantToPrint.toggle()
+                }
             
-            .fullScreenCover(isPresented: $wantToPrint) {
-                SelectFileToPrint()
-            }
-            
+                .fullScreenCover(isPresented: $wantToPrint) {
+                    SelectFileToPrint()
+                }
         }
-        
-        
     }
-    
-    
 }

@@ -24,7 +24,7 @@ final class POST {
         guard let encoded = try? JSONEncoder().encode(json) else {
             throw fatalError("[\(method)] FAILED TO ENCODE JSON.")
         }
-    
+        
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
@@ -37,8 +37,8 @@ final class POST {
             }
             
             switch httpResponse.statusCode {
-                case 200:       return true
-                default:        return false
+            case 200:       return true
+            default:        return false
             }
         }
     }
@@ -100,9 +100,8 @@ final class POST {
             )
             
             return try await POST.performRequest(json: json, method: "printFilename", url: url)
-    
+            
         }
-        
     }
     
     final class Machine {
@@ -132,7 +131,6 @@ final class POST {
                     let (_, _) = try await URLSession.shared.upload(for: request, from: encoded)
                 }
             }
-            
         }
         
         static func emergencyStop (pr: Printer) async throws {
@@ -157,7 +155,6 @@ final class POST {
                 let (data, _) = try await URLSession.shared.upload(for: request, from: encoded)
                 print (data)
             }
-            
         }
         
         static func shutdown (pr: Printer) async throws -> Bool {
@@ -184,7 +181,6 @@ final class POST {
             
             return try await POST.performRequest(json: json, method: json.method, url: url)
         }
-        
     }
     
     final class Server {
@@ -201,8 +197,6 @@ final class POST {
             return try await POST.performRequest(json: json, method: json.method, url: url)
             
         }
-        
     }
-    
 }
 
