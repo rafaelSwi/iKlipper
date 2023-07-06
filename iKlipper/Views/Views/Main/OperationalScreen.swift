@@ -6,7 +6,6 @@ struct OperationalScreen: View {
     @Binding var state: PrinterState.State
     
     @State var wantToPrint: Bool = false
-    @State var wantToMove: Bool = false
     @State var wantToViewCam: Bool = false
     
     @State var temp: [String: [Double]] = [
@@ -15,13 +14,13 @@ struct OperationalScreen: View {
         "chamber_fan": []
     ]
     
-    @State var extruder = Temp(name: "Extruder", color: .red, icon: "arrowtriangle.down.fill")
-    @State var heaterBed = Temp(name: "Heater Bed", color: .blue, icon: "bed.double.fill")
-    @State var chamberFan = Temp(name: "Chamber Fan", color: .green, icon: "wind.circle.fill")
+    @State var extruder = DisplayableInfo(name: "Extruder", color: .red, icon: "flame.fill", tag: "°")
+    @State var heaterBed = DisplayableInfo(name: "Heater Bed", color: .blue, icon: "bed.double.fill", tag: "°")
+    @State var chamberFan = DisplayableInfo(name: "Chamber Fan", color: .green, icon: "wind.circle.fill", tag: "°")
     
     var body: some View {
         
-        var temperatures: [Temp] = [extruder, heaterBed, chamberFan]
+        var temperatures: [DisplayableInfo] = [extruder, heaterBed, chamberFan]
         
         VStack {
             
@@ -35,9 +34,9 @@ struct OperationalScreen: View {
                     Task {
                         let pr = printerInfo.main
                         state = try await pr.state()
-                        extruder.tempValues = try await GET.Server.tempStore(pr: pr).extruder.temperatures
-                        heaterBed.tempValues = try await GET.Server.tempStore(pr: pr).heaterBed.temperatures
-                        chamberFan.tempValues = try await GET.Server.tempStore(pr: pr).temperatureFan.temperatures
+                        extruder.values = try await GET.Server.tempStore(pr: pr).extruder.temperatures
+                        heaterBed.values = try await GET.Server.tempStore(pr: pr).heaterBed.temperatures
+                        chamberFan.values = try await GET.Server.tempStore(pr: pr).temperatureFan.temperatures
                     }
                     temperatures = [extruder, heaterBed, chamberFan]
                 }
@@ -57,20 +56,6 @@ struct OperationalScreen: View {
             }
             .fullScreenCover(isPresented: $wantToViewCam) {
                 WebcamView()
-            }
-            
-            DefaultView.Custom.IconTextButton (
-                text: "Move",
-                systemName: "arrow.up.and.down.and.arrow.left.and.right",
-                w: 235,
-                h: 45,
-                cr: 28
-            )
-            .onTapGesture {
-                wantToMove.toggle()
-            }
-            .fullScreenCover(isPresented: $wantToMove) {
-                // code here to view the moving tab
             }
             
             DefaultView.Custom.IconButton(systemName: "printer", w: 350, h: 70, cr: 28)

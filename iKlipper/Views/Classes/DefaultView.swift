@@ -73,7 +73,7 @@ final class DefaultView {
     }
     
     struct TemperatureRectangle: View {
-        var temperature: Temp
+        var temperature: DisplayableInfo
         var body: some View {
             HStack {
                 Rectangle()
@@ -82,7 +82,7 @@ final class DefaultView {
                 Text (temperature.name)
                     .font(.system(size: 28).bold())
                     .padding(.horizontal)
-                Text ("\(Int(temperature.tempValues.last ?? 0.0))")
+                Text ("\(Int(temperature.values.last ?? 0.0))")
                     .font(.system(size: 28))
                 Spacer()
             }

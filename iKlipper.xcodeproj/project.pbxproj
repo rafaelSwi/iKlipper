@@ -25,13 +25,13 @@
 		3471D05629FCB75E00C3BDB9 /* GET Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05529FCB75E00C3BDB9 /* GET Structs.swift */; };
 		34C5D7462A291E8D006D3937 /* PrintingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C5D7452A291E8D006D3937 /* PrintingScreen.swift */; };
 		6F01A4982A4F3DFC00E741CC /* FullScreenWebcam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F01A4972A4F3DFC00E741CC /* FullScreenWebcam.swift */; };
-		6F01A49B2A4F4A8400E741CC /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F01A49A2A4F4A8400E741CC /* Move.swift */; };
 		6F02F7722A549BE400EB763D /* PrintStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F02F7712A549BE400EB763D /* PrintStats.swift */; };
 		6F6FB4442A5346E1002B25EF /* PrinterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6FB4432A5346E1002B25EF /* PrinterState.swift */; };
 		6F6FB4462A534C94002B25EF /* OfflinePrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6FB4452A534C94002B25EF /* OfflinePrinter.swift */; };
 		6F6FB4482A534CEB002B25EF /* MainScreenLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6FB4472A534CEB002B25EF /* MainScreenLoader.swift */; };
 		6F6FB44C2A5352AF002B25EF /* PleaseAddPrinter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6FB44B2A5352AF002B25EF /* PleaseAddPrinter.swift */; };
-		6FBFD2792A4C87DE003C3A68 /* Temp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFD2782A4C87DE003C3A68 /* Temp.swift */; };
+		6F7275C52A57368C00AF39D2 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7275C42A57368C00AF39D2 /* Converter.swift */; };
+		6FBFD2792A4C87DE003C3A68 /* DisplayableInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FBFD2782A4C87DE003C3A68 /* DisplayableInfo.swift */; };
 		6FEA2B622A4DF6F5005EB585 /* ImageStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA2B612A4DF6F4005EB585 /* ImageStream.swift */; };
 		6FEA2B642A4DFBF4005EB585 /* WebcamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA2B632A4DFBF4005EB585 /* WebcamView.swift */; };
 		6FEA2B662A4E0421005EB585 /* MainSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA2B652A4E0421005EB585 /* MainSettings.swift */; };
@@ -57,13 +57,13 @@
 		3471D05529FCB75E00C3BDB9 /* GET Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GET Structs.swift"; sourceTree = "<group>"; };
 		34C5D7452A291E8D006D3937 /* PrintingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingScreen.swift; sourceTree = "<group>"; };
 		6F01A4972A4F3DFC00E741CC /* FullScreenWebcam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenWebcam.swift; sourceTree = "<group>"; };
-		6F01A49A2A4F4A8400E741CC /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
 		6F02F7712A549BE400EB763D /* PrintStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintStats.swift; sourceTree = "<group>"; };
 		6F6FB4432A5346E1002B25EF /* PrinterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterState.swift; sourceTree = "<group>"; };
 		6F6FB4452A534C94002B25EF /* OfflinePrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflinePrinter.swift; sourceTree = "<group>"; };
 		6F6FB4472A534CEB002B25EF /* MainScreenLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenLoader.swift; sourceTree = "<group>"; };
 		6F6FB44B2A5352AF002B25EF /* PleaseAddPrinter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PleaseAddPrinter.swift; sourceTree = "<group>"; };
-		6FBFD2782A4C87DE003C3A68 /* Temp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temp.swift; sourceTree = "<group>"; };
+		6F7275C42A57368C00AF39D2 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		6FBFD2782A4C87DE003C3A68 /* DisplayableInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayableInfo.swift; sourceTree = "<group>"; };
 		6FEA2B612A4DF6F4005EB585 /* ImageStream.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStream.swift; sourceTree = "<group>"; };
 		6FEA2B632A4DFBF4005EB585 /* WebcamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebcamView.swift; sourceTree = "<group>"; };
 		6FEA2B652A4E0421005EB585 /* MainSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettings.swift; sourceTree = "<group>"; };
@@ -161,14 +161,6 @@
 			path = Structs;
 			sourceTree = "<group>";
 		};
-		6F01A4992A4F4A7700E741CC /* Printer */ = {
-			isa = PBXGroup;
-			children = (
-				6F01A49A2A4F4A8400E741CC /* Move.swift */,
-			);
-			path = Printer;
-			sourceTree = "<group>";
-		};
 		6F6FB44A2A535237002B25EF /* NavigationBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,10 +169,18 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
+		6F7275C32A57367000AF39D2 /* Value Converter */ = {
+			isa = PBXGroup;
+			children = (
+				6F7275C42A57368C00AF39D2 /* Converter.swift */,
+			);
+			path = "Value Converter";
+			sourceTree = "<group>";
+		};
 		6FBFD2772A4C87CF003C3A68 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6FBFD2782A4C87DE003C3A68 /* Temp.swift */,
+				6FBFD2782A4C87DE003C3A68 /* DisplayableInfo.swift */,
 				6F6FB4432A5346E1002B25EF /* PrinterState.swift */,
 				6F02F7712A549BE400EB763D /* PrintStats.swift */,
 			);
@@ -200,7 +200,6 @@
 			isa = PBXGroup;
 			children = (
 				6F6FB44A2A535237002B25EF /* NavigationBar */,
-				6F01A4992A4F4A7700E741CC /* Printer */,
 				6FDA203E2A4F32A600E6355A /* Settings */,
 				6FDA203D2A4F328200E6355A /* Print */,
 				6FDA203C2A4F324400E6355A /* Webcam */,
@@ -260,6 +259,7 @@
 		6FDA20402A4F339600E6355A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6F7275C32A57367000AF39D2 /* Value Converter */,
 				3471D03B29FCB62500C3BDB9 /* Settings */,
 				3471D04929FCB6D500C3BDB9 /* Printers */,
 			);
@@ -355,7 +355,6 @@
 				6FEA2B662A4E0421005EB585 /* MainSettings.swift in Sources */,
 				3471D04229FCB67600C3BDB9 /* EditPrinter.swift in Sources */,
 				3471D04729FCB6C400C3BDB9 /* SelectFileToPrint.swift in Sources */,
-				6F01A49B2A4F4A8400E741CC /* Move.swift in Sources */,
 				3471D04D29FCB6F800C3BDB9 /* PrinterInfo.swift in Sources */,
 				3471D04429FCB68D00C3BDB9 /* DefaultView.swift in Sources */,
 				3471D04B29FCB6E700C3BDB9 /* Printer.swift in Sources */,
@@ -363,9 +362,10 @@
 				6F6FB4482A534CEB002B25EF /* MainScreenLoader.swift in Sources */,
 				3471D03A29FCB61600C3BDB9 /* Settings.swift in Sources */,
 				3471D05129FCB72600C3BDB9 /* POST Functions.swift in Sources */,
-				6FBFD2792A4C87DE003C3A68 /* Temp.swift in Sources */,
+				6FBFD2792A4C87DE003C3A68 /* DisplayableInfo.swift in Sources */,
 				3471D05329FCB73800C3BDB9 /* GET Functions.swift in Sources */,
 				6F01A4982A4F3DFC00E741CC /* FullScreenWebcam.swift in Sources */,
+				6F7275C52A57368C00AF39D2 /* Converter.swift in Sources */,
 				3471D05629FCB75E00C3BDB9 /* GET Structs.swift in Sources */,
 				6F6FB4442A5346E1002B25EF /* PrinterState.swift in Sources */,
 				3471D02829FCB54100C3BDB9 /* iKlipperApp.swift in Sources */,
