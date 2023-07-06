@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 
+/// Stores Views considered "default" for use throughout the app, such as buttons.
 final class DefaultView {
     
     final class Custom {

@@ -1,6 +1,8 @@
 import Foundation
 import SwiftUI
 
+/// Algorithm created to constantly receive images from a web address
+/// crowsnest uses JPEGStream method, so i could not use Apple's official AVKit, as this format is not supported.
 @MainActor
 final class ImageStream: ObservableObject {
     

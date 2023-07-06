@@ -153,6 +153,7 @@ fileprivate struct PrinterBox: View {
                 )
             }
             
-        } .frame(height: 50)
+        }
+        .frame(height: 50)
     }
 }

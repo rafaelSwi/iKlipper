@@ -15,7 +15,7 @@ struct MainScreenLoader: View {
                 if printerInfo.main.name == "No_Name" {
                     PleaseAddPrinter()
                 } else if state == .offline {
-                    OfflinePrinter(state: $state)
+                    OfflinePrinter()
                 } else if state == .operational {
                     OperationalScreen(state: $state)
                 } else if state == .printing {

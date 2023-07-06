@@ -1,6 +1,7 @@
 import Foundation
 import SwiftUI
 
+/// It stores the most relevant information of a Job in progress.
 struct PrintStats {
     
     var image: UIImage

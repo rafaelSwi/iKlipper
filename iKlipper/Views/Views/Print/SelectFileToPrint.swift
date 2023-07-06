@@ -166,9 +166,16 @@ fileprivate struct ItemBox: View {
         
         HStack {
             
-            Image(systemName: "cube.transparent")
+            if doesHasPrefix(self.file.path, "SX1") {
+                Text ("X1")
+                    .bold()
+                    .foregroundColor(.gray)
+            } else {
+                Image(systemName: "cube.transparent")
+                    .foregroundColor(.gray)
+            }
             
-            Text (goodLookingName(self.file.path))
+            Text (beauty(self.file.path))
             
             Spacer()
             
@@ -181,7 +188,9 @@ fileprivate struct ItemBox: View {
                 AreYouSurePrint(file: file)
             }
             
-        } .frame(height: 50)
+        }
+        .frame(height: 50)
+        .padding(.horizontal)
         
     }
 }
@@ -193,6 +202,8 @@ fileprivate struct AreYouSurePrint: View {
     @EnvironmentObject var printerInfo: PrinterInfo
     
     @State var file: Network.AvailableFiles.Result
+    
+    @State var thumbnaildata: Data? = nil
     
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -209,16 +220,49 @@ fileprivate struct AreYouSurePrint: View {
             
             VStack {
                 
-                Image(systemName: "cube.transparent")
-                    .font(.system(size: 135))
-                    .padding(.bottom)
+                if doesHasPrefix(self.file.path, "SX1") || doesHasPrefix(self.file.path, "USB/SX1") {
+                    ZStack {
+                        Image(systemName: "diamond")
+                            .resizable()
+                            .opacity(0.3)
+                            .frame(width: 200, height: 200)
+                        Text("X1")
+                            .font(.system(size: 145).bold())
+                            .padding(.bottom)
+                    }
+                } else {
+                    ZStack {
+                        Image(systemName: "cube.fill")
+                            .resizable()
+                            .opacity(0.2)
+                            .frame(width: 200, height: 200)
+                        Text("FILE")
+                            .font(.system(size: 105).bold())
+                            .padding(.bottom)
+                    }
+                }
                 
-                Text ("\(goodLookingName(self.file.path))")
+                Text ("\(beauty(self.file.path))")
+                Text ("\(self.file.path)")
+                    .font(.subheadline)
+                    .onAppear {
+                        Task {
+                            thumbnaildata = try await GET.Server.thumbnail (
+                                pr: printerInfo.main,
+                                filename: self.file.path
+                            )
+                        }
+                    }
                 
-                Text ("Last Modification:\n\(dateFormatter.string(from: Date(timeIntervalSince1970: file.modified)))")
-                    .padding(.all)
-                
-                Text ("Size: \(String(format: "%.1f", Double(self.file.size) / 1048576.0)) mb")
+                if (thumbnaildata == nil) {
+                    ProgressView()
+                        .frame(width: 200, height: 200)
+                } else {
+                    Image(uiImage: (UIImage(data: thumbnaildata!) ?? UIImage(systemName: "cube"))!)
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .padding(.all)
+                }
                 
             }
             .font(.system(size: CGFloat(30)))
@@ -246,7 +290,12 @@ fileprivate struct AreYouSurePrint: View {
     }
 }
 
-fileprivate func goodLookingName(_ name: String) -> String {
+fileprivate func doesHasPrefix (_ filepath: String, _ prfx: String) -> Bool {
+    let fp: String = filepath.uppercased()
+    return fp.hasPrefix(prfx) || fp.hasPrefix("USB/\(prfx)")
+}
+
+fileprivate func beauty(_ name: String) -> String {
     var result = name
     if let index = result.range(of: ".", options: .backwards)?.lowerBound {
         result = String(result[..<index])
@@ -255,6 +304,16 @@ fileprivate func goodLookingName(_ name: String) -> String {
     result = result.replacingOccurrences(of: "USB/", with: "")
     result = result.replacingOccurrences(of: "/", with: " > ")
     result = result.replacingOccurrences(of: "?", with: "")
+    
+    let prefixes = ["SX1", "SX2"]
+    for prefix in prefixes {
+        if result.uppercased().hasPrefix(prefix) {
+            for _ in 0...prefix.count {
+                result.removeFirst()
+            }
+        }
+    }
+    
     return result.capitalized
 }
 

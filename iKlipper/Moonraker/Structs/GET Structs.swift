@@ -1,5 +1,8 @@
 import Foundation
 
+/// All structs used to store data collected in JSON over the Internet.
+/// Some of them are converted to Models, some are not.
+/// You can find all JSON structures by viewing the official Moonraker Remote API documentation.
 final class Network {
     
     struct AvailableFiles: Codable {
@@ -79,9 +82,8 @@ final class Network {
             }
             
             var status: Status
-            
+    
         }
-        
         var result: Result
         
     }

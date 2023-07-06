@@ -1,5 +1,6 @@
 import Foundation
 
+/// The "Printer" Class stores the data of only a single printer
 final public class Printer: ObservableObject, Identifiable {
     
     enum Model: String, Hashable {

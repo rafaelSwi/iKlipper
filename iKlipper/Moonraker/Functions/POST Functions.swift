@@ -1,5 +1,8 @@
 import Foundation
 
+/// Everything related to the "POST" method.
+/// To understand the divisions of functions into different classes, see the Moonraker documentation.
+/// "Printer" is referred to as "Machine" to avoid conflict with the already created "Printer" class.
 final class POST {
     
     struct JSON <T: Codable> : Codable {

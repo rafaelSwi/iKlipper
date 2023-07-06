@@ -1,5 +1,6 @@
 import Foundation
 
+/// Class where it stores the Application's main settings, which can be modified by the user
 final public class MainSettings: ObservableObject {
     
     struct WebcamPerformance: Hashable {

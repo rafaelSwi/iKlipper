@@ -1,6 +1,9 @@
 import Foundation
 import SwiftUI
 
+/// Everything related to the "GET" method.
+/// To understand the divisions of functions into different classes, see the Moonraker documentation.
+/// "Printer" is referred to as "Machine" to avoid conflict with the already created "Printer" class.
 final class GET {
     
     static func performRequest (method: String, url: URL) async throws -> Data {
@@ -45,18 +48,19 @@ final class GET {
         static func thumbnail (pr: Printer, filename: String) async throws -> Data {
             
             var fname = filename
-            fname = fname.replacingOccurrences(of: " ", with: "%20")
-            print (fname)
             
+            /// Removes the ".gcode" and adds ".png" to the end of the file name
             let components = fname.components(separatedBy: ".")
             if components.count > 1 {
                 fname = components.dropLast().joined(separator: ".")
             }
-            
             fname = (fname + ".png")
             
-            let url = URL(string: "\(pr.host)/server/files/gcodes/.thumbs/\(fname)")!
-            print (url)
+            /// Create the URL
+            var urlpath = "/server/files/gcodes/.thumbs/\(fname)"
+            urlpath = urlpath.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed)!
+            var fullurl = "\(pr.host)\(urlpath)"
+            let url = URL(string: fullurl)!
             
             return try await URLSession.shared.data(from: url).0
             

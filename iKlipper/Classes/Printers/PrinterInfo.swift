@@ -1,5 +1,7 @@
 import Foundation
 
+/// The "PrinterInfo" Class stores the list of Printers ("Printer" class) and defines which one is the main printer.
+/// This class is used as EnvironmentObject in almost all Views.
 final public class PrinterInfo: ObservableObject {
     
     @Published var printers: [Printer]
