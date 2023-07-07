@@ -23,13 +23,18 @@ final public class Printer: ObservableObject, Identifiable {
     func state () async throws -> PrinterState.State {
         
         let printer_state = try await GET.API.jobStatus(pr: self).state
-        
+        print ("PRINTER_STATE: \(printer_state).")
+       
         switch printer_state {
             
         case PrinterState.State.operational.rawValue:
             return PrinterState.State.operational
         case PrinterState.State.printing.rawValue:
             return PrinterState.State.printing
+        case PrinterState.State.error.rawValue:
+            return PrinterState.State.error
+        case PrinterState.State.paused.rawValue:
+            return PrinterState.State.paused
         default:
             return PrinterState.State.offline
             

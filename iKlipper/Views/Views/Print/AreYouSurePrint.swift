@@ -9,7 +9,7 @@ struct AreYouSurePrint: View {
     
     @State var file: Network.AvailableFiles.Result
     
-    @State var thumbnaildata: Data? = nil
+    @State var thumbnail: UIImage = UIImage(systemName: "cube")!
     
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -63,22 +63,17 @@ struct AreYouSurePrint: View {
                     .font(.subheadline)
                     .onAppear {
                         Task {
-                            thumbnaildata = try await GET.Server.thumbnail (
+                            thumbnail = try await GET.Server.thumbnail (
                                 pr: printerInfo.main,
-                                filename: self.file.path
+                                filename: self.file.path,
+                                backup: "cube"
                             )
                         }
                     }
-                
-                if (thumbnaildata == nil) {
-                    ProgressView()
-                        .frame(width: 200, height: 200)
-                } else {
-                    Image(uiImage: (UIImage(data: thumbnaildata!) ?? UIImage(systemName: "cube"))!)
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                        .padding(.all)
-                }
+                Image(uiImage: thumbnail)
+                    .resizable()
+                    .frame(width: 200, height: 200)
+                    .padding(.all)
                 
             }
             .font(.system(size: CGFloat(30)))

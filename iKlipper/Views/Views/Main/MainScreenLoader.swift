@@ -14,11 +14,9 @@ struct MainScreenLoader: View {
                 
                 if printerInfo.main.name == "No_Name" {
                     PleaseAddPrinter()
-                } else if state == .offline {
+                } else if state == .offline || state == .operational || state == .error {
                     OperationalScreen(state: $state)
-                } else if state == .operational {
-                    OperationalScreen(state: $state)
-                } else if state == .printing {
+                } else if state == .printing || state == .paused {
                     PrintingScreen(state: $state)
                 } else {
                     ProgressView()

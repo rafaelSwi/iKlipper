@@ -22,7 +22,7 @@ final class GET {
         static func filesList (pr: Printer) async throws -> [Network.AvailableFiles.Result] {
             
             let url = URL(string: "\(pr.host)/server/files/list")!
-
+            
             let data: Data = try await GET.performRequest(method: "server.files.list", url: url)
             
             let decodedData = try JSONDecoder().decode(Network.AvailableFiles.self, from: data)
@@ -45,7 +45,7 @@ final class GET {
             
         }
         
-        static func thumbnail (pr: Printer, filename: String) async throws -> Data {
+        static func thumbnail (pr: Printer, filename: String, backup: String) async throws -> UIImage {
             
             var fname = filename
             
@@ -62,10 +62,16 @@ final class GET {
             var fullurl = "\(pr.host)\(urlpath)"
             let url = URL(string: fullurl)!
             
-            return try await URLSession.shared.data(from: url).0
+            let data = try await URLSession.shared.data(from: url)
             
+            if let httpResponse = data.1 as? HTTPURLResponse {
+                if httpResponse.statusCode >= 400 && httpResponse.statusCode <= 599 {
+                    print("URLResponse is an error")
+                    return UIImage(systemName: backup)!
+                }
+            }
+            return UIImage(data: data.0) ?? UIImage(systemName: backup)!
         }
-        
     }
     
     final class Machine {
@@ -82,10 +88,10 @@ final class GET {
             
             let filename = dcdData.result.status.print_stats.filename
             
-            let thumbnail = try await GET.Server.thumbnail(pr: pr, filename: filename)
+            let thumbnail = try await GET.Server.thumbnail(pr: pr, filename: filename, backup: "cube")
             
             let printStats = PrintStats (
-                image: (UIImage(data: thumbnail) ?? UIImage(systemName: "cube.fill"))!,
+                image: thumbnail,
                 filePath: dcdData.result.status.virtual_sdcard.file_path,
                 fileSize: dcdData.result.status.virtual_sdcard.file_size,
                 fileName: filename,
@@ -117,4 +123,3 @@ final class GET {
         }
     }
 }
-

@@ -18,11 +18,38 @@ struct PrintingScreen: View {
     @State var extruder = DisplayableInfo(name: "Extruder", color: .red, icon: "flame.fill", tag: "°")
     @State var heaterBed = DisplayableInfo(name: "Heater Bed", color: .blue, icon: "bed.double.fill", tag: "°")
     
+    var pauseButton: some View {
+        DefaultView.Custom.IconTextButton (
+            text: "Pause",
+            systemName: "pause.circle",
+            w: 145,
+            h: 55,
+            cr: 12
+        )
+    }
+    
+    var resumeButton: some View {
+        DefaultView.Custom.IconTextButton (
+            text: "Resume",
+            systemName: "play.circle",
+            w: 145,
+            h: 55,
+            cr: 12
+        )
+    }
+    
+    func isPaused (state: PrinterState.State) -> Bool {
+        if state == .paused {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     var placeholder: some View {
-        Image (systemName: "cube.transparent")
+        Image (systemName: "cube")
             .resizable()
-            .frame(width: 200, height: 200)
-            .padding(.all)
+            .foregroundColor(.gray)
     }
     
     // n = Name; ic = icon; v = value; c = color;
@@ -70,13 +97,30 @@ struct PrintingScreen: View {
             }
             .multilineTextAlignment(.center)
             
-            if (printStats.image == UIImage(systemName: "cube")) {
-                placeholder
-            } else {
-                Image(uiImage: printStats.image)
-                    .resizable()
-                    .frame(width: 180, height: 180)
-                    .padding(.all)
+            ZStack {
+                
+                if isPaused(state: state) {
+                    Image(systemName: "pause.fill")
+                        .resizable()
+                        .frame(width: 90, height: 90)
+                        .foregroundColor(.orange)
+                }
+                
+                Group {
+                    
+                    if (printStats.image == UIImage(systemName: "cube")) {
+                        placeholder
+                    } else {
+                        Image(uiImage: printStats.image)
+                            .resizable()
+                    }
+                    
+                }
+                .frame(width: 180, height: 180)
+                .padding(.all)
+                .opacity(isPaused(state: state) ? 0.3 : 1.0)
+                .blur(radius: isPaused(state: state) ? 10 : 0)
+                
             }
             
             ForEach(displayInfos) { info in
@@ -88,17 +132,21 @@ struct PrintingScreen: View {
             
             HStack {
                 
-                DefaultView.Custom.IconTextButton (
-                    text: "Pause",
-                    systemName: "pause.circle",
-                    w: 145,
-                    h: 55,
-                    cr: 12
-                )
+                Group {
+                    if isPaused(state: state) {
+                        resumeButton
+                    } else {
+                        pauseButton
+                    }
+                }
                 .onTapGesture {
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     Task {
-                        try await POST.Print.pause(pr: printerInfo.main)
+                        if isPaused(state: state) {
+                            try await POST.Print.resume(pr: printerInfo.main)
+                        } else {
+                            try await POST.Print.pause(pr: printerInfo.main)
+                        }
                     }
                 }
                 
@@ -138,6 +186,7 @@ struct PrintingScreen: View {
             Spacer()
             
         }
+        .animation(.spring(), value: printStats.progress)
         .onAppear {
             Timer.scheduledTimer(withTimeInterval: 3.5, repeats: true) { timer in
                 Task {

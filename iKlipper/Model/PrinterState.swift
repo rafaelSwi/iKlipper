@@ -7,6 +7,8 @@ struct PrinterState {
         case offline = "Offline"
         case operational = "Operational"
         case printing = "Printing"
+        case paused = "Paused"
+        case error = "Error"
     }
     
     var state: State
