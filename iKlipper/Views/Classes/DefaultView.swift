@@ -39,28 +39,6 @@ final class DefaultView {
         }
     }
     
-    struct LoadingSpin: View {
-        
-        @State private var color = Color.white
-        @State private var angle: Double = 0
-        
-        var body: some View {
-            
-            Image (systemName: "globe")
-                .resizable()
-                .foregroundColor(color)
-                .frame(width: 100, height: 100)
-                .rotationEffect(.degrees(angle))
-                .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
-                .onAppear() {
-                    Timer.scheduledTimer(withTimeInterval: 1.3, repeats: true) { timer in
-                        self.angle += 360
-                        self.color = self.color == .red ? .green : .red
-                    }
-                }
-        }
-    }
-    
     struct ReturnButton: View {
         var body: some View {
             Image(systemName: "arrow.down")
@@ -69,23 +47,6 @@ final class DefaultView {
                 .background(Color.gray.opacity(0.2))
                 .cornerRadius(28)
                 .padding(.all)
-        }
-    }
-    
-    struct TemperatureRectangle: View {
-        var temperature: DisplayableInfo
-        var body: some View {
-            HStack {
-                Rectangle()
-                    .frame(width: 9, height: 78)
-                    .foregroundColor(temperature.color)
-                Text (temperature.name)
-                    .font(.system(size: 28).bold())
-                    .padding(.horizontal)
-                Text ("\(Int(temperature.values.last ?? 0.0))")
-                    .font(.system(size: 28))
-                Spacer()
-            }
         }
     }
 }

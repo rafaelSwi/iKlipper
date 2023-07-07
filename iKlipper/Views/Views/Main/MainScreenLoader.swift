@@ -15,15 +15,14 @@ struct MainScreenLoader: View {
                 if printerInfo.main.name == "No_Name" {
                     PleaseAddPrinter()
                 } else if state == .offline {
-                    OfflinePrinter()
+                    OperationalScreen(state: $state)
                 } else if state == .operational {
                     OperationalScreen(state: $state)
                 } else if state == .printing {
                     PrintingScreen(state: $state)
                 } else {
-                    DefaultView.LoadingSpin()
+                    ProgressView()
                 }
-                
             }
             .onAppear {
                 Timer.scheduledTimer(withTimeInterval: 2.2, repeats: true) { timer in

@@ -61,6 +61,7 @@ struct WebcamView: View {
             )
             .padding(.all)
             .onTapGesture {
+                UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 webcam.stop()
                 play()
             }

@@ -18,6 +18,37 @@ struct OperationalScreen: View {
     @State var heaterBed = DisplayableInfo(name: "Heater Bed", color: .blue, icon: "bed.double.fill", tag: "°")
     @State var chamberFan = DisplayableInfo(name: "Chamber Fan", color: .green, icon: "wind.circle.fill", tag: "°")
     
+    func statusColor (_ color: Color, _ status: PrinterState.State) -> Color {
+        if status == .offline {
+            return .gray
+        } else {
+            return color
+        }
+    }
+    
+    func temperatureRectangle (temperature: DisplayableInfo) -> some View {
+        return ZStack {
+            Rectangle()
+                .frame(width: 350, height: 78)
+                .foregroundColor(statusColor(temperature.color, state))
+                .blur(radius: 25)
+                .opacity(0.1)
+            
+            HStack {
+                Rectangle()
+                    .frame(width: 9, height: 78)
+                    .foregroundColor(statusColor(temperature.color, state))
+                Text (temperature.name)
+                    .font(.system(size: 28).bold())
+                    .padding(.horizontal)
+                Spacer()
+                Text ("\(Int(temperature.values.last ?? 0.0))")
+                    .font(.system(size: 28))
+                    .padding(.trailing)
+            }
+        }
+    }
+    
     var body: some View {
         
         var temperatures: [DisplayableInfo] = [extruder, heaterBed, chamberFan]
@@ -28,7 +59,7 @@ struct OperationalScreen: View {
                 .frame(height: 15)
             
             ForEach(temperatures) { temperature in
-                DefaultView.TemperatureRectangle(temperature: temperature)
+                temperatureRectangle(temperature: temperature)
             } .onAppear {
                 Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
                     Task {
@@ -65,7 +96,7 @@ struct OperationalScreen: View {
                 }
             
                 .fullScreenCover(isPresented: $wantToPrint) {
-                    SelectFileToPrint()
+                    FileFetch()
                 }
         }
     }

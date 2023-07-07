@@ -90,8 +90,6 @@ final class POST {
         
         static func printfilename (_ filename: String, pr: Printer) async throws -> Bool {
             
-            let url = URL(string: "\(pr.host)/printer/print/start?filename=\(filename)")!
-            
             struct params: Codable {
                 var filename: String
             }
@@ -102,8 +100,19 @@ final class POST {
                 params: params(filename: filename)
             )
             
-            return try await POST.performRequest(json: json, method: "printFilename", url: url)
-            
+            var components = URLComponents(string: "\(pr.host)")!
+            components.path = "/printer/print/start"
+            components.queryItems = [
+                URLQueryItem(name: "filename", value: "\(filename)"),
+            ]
+            if let url = components.url {
+                var request = URLRequest(url: url)
+                request.httpMethod = "POST"
+                do {
+                    return try await POST.performRequest(json: json, method: "printFilename", url: url)
+                }
+            }
+            return false
         }
     }
     

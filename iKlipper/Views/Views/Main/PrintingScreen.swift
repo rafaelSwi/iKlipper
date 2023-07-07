@@ -25,65 +25,6 @@ struct PrintingScreen: View {
             .padding(.all)
     }
     
-    enum ParenthesesContentMethod {
-        case removeParenthesesContent
-        case extractParenthesesContent
-    }
-    
-    func parenthesesContent(_ input: String, _ method: ParenthesesContentMethod) -> String {
-        
-        let regex = try! NSRegularExpression(pattern: "\\(([^()]+)\\)")
-        
-        switch method {
-        case .removeParenthesesContent:
-            var output = regex.stringByReplacingMatches(
-                in: input,
-                options: [],
-                range: NSRange(location: 0, length: input.utf16.count),
-                withTemplate: ""
-            )
-            output = output.trimmingCharacters(in: .whitespaces)
-            return output
-        case .extractParenthesesContent:
-            let matches = regex.matches(
-                in: input,
-                options: [],
-                range: NSRange(location: 0, length: input.utf16.count)
-            )
-            
-            let extractedContent = matches.map { match in
-                let range = match.range(at: 1)
-                return (input as NSString).substring(with: range)
-            }
-            
-            return extractedContent.joined(separator: "")
-        }
-    }
-    
-    func beauty (_ string: String, _ method: ParenthesesContentMethod) -> String {
-        var str = string
-        let prefixes = ["SX1", "SX2"]
-        for prefix in prefixes {
-            if str.uppercased().hasPrefix(prefix) {
-                for _ in 0...prefix.count {
-                    str.removeFirst()
-                }
-            }
-        }
-        let components = str.components(separatedBy: ".")
-        if components.count > 1 {
-            str = components.dropLast().joined(separator: ".")
-        }
-        switch method {
-        case .removeParenthesesContent:
-            let result = parenthesesContent(str, .removeParenthesesContent)
-            return result.capitalized
-        case .extractParenthesesContent:
-            let result = parenthesesContent(str, .extractParenthesesContent)
-            return result.capitalized
-        }
-    }
-    
     // n = Name; ic = icon; v = value; c = color;
     func infoDisplay (n: String, ic: String, v: Int, c: Color, _ tag: String) -> some View {
         ZStack {
@@ -119,9 +60,11 @@ struct PrintingScreen: View {
         VStack {
             
             Group {
-                Text (beauty(printStats.fileName, .removeParenthesesContent).prefix(26))
+                let title = TextFormat.beauty(printStats.fileName, .removeParenthesesContent)
+                let subTitle = TextFormat.beauty(printStats.fileName, .extractParenthesesContent)
+                Text (title.prefix(26))
                     .font(.system(size: 28, weight: .thin))
-                Text (beauty(printStats.fileName, .extractParenthesesContent))
+                Text (subTitle)
                     .font(.system(size: 17, weight: .thin))
                     .foregroundColor(.gray)
             }
@@ -153,6 +96,7 @@ struct PrintingScreen: View {
                     cr: 12
                 )
                 .onTapGesture {
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     Task {
                         try await POST.Print.pause(pr: printerInfo.main)
                     }
@@ -166,6 +110,7 @@ struct PrintingScreen: View {
                     cr: 12
                 )
                 .onTapGesture {
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
                     Task {
                         try await POST.Print.cancel(pr: printerInfo.main)
                     }
