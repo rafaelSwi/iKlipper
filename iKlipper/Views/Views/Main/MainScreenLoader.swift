@@ -10,14 +10,17 @@ struct MainScreenLoader: View {
         
         Group {
             
+            
             VStack {
                 
                 if printerInfo.main.name == "No_Name" {
                     PleaseAddPrinter()
-                } else if state == .offline || state == .operational || state == .error {
+                } else if state == .offline || state == .operational || state == .standyby {
                     OperationalScreen(state: $state)
                 } else if state == .printing || state == .paused {
                     PrintingScreen(state: $state)
+                } else if state == .cancelled || state == .error {
+                    OperationalScreen(state: $state)
                 } else {
                     ProgressView()
                 }

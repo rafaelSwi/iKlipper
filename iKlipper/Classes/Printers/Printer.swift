@@ -35,6 +35,10 @@ final public class Printer: ObservableObject, Identifiable {
             return PrinterState.State.error
         case PrinterState.State.paused.rawValue:
             return PrinterState.State.paused
+        case PrinterState.State.cancelled.rawValue:
+            return PrinterState.State.cancelled
+        case PrinterState.State.standyby.rawValue:
+            return PrinterState.State.standyby
         default:
             return PrinterState.State.offline
             
