@@ -7,6 +7,7 @@ struct FileListView: View {
     
     @Binding var internalFiles: [Network.AvailableFiles.Result]
     @Binding var usbFiles: [Network.AvailableFiles.Result]
+    @Binding var usbSavedFiles: [Network.AvailableFiles.Result]
     
     var body: some View {
         
@@ -29,6 +30,16 @@ struct FileListView: View {
                     .bold()
                     .padding(.top)
                 ForEach(usbFiles) { file in
+                    ItemBox(file: file)
+                }
+            }
+            
+            Group {
+                Text (usbFiles.isEmpty ? "" : "Saved from USB")
+                    .font(.title2)
+                    .bold()
+                    .padding(.top)
+                ForEach(usbSavedFiles) { file in
                     ItemBox(file: file)
                 }
             }

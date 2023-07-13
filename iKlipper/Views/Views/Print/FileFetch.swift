@@ -6,6 +6,7 @@ struct FileFetch: View {
     @State var fullFileList: [Network.AvailableFiles.Result] = []
     @State var internalFiles: [Network.AvailableFiles.Result] = []
     @State var usbFiles: [Network.AvailableFiles.Result] = []
+    @State var usbSavedFiles: [Network.AvailableFiles.Result] = []
     
     @EnvironmentObject var printerInfo: PrinterInfo
     
@@ -19,10 +20,12 @@ struct FileFetch: View {
                     Task {
                         fullFileList = try await GET.Server.filesList(pr: printerInfo.main)
                         for item in fullFileList {
-                            if !TextFormat.doesHasPrefix(item.path, "USB") {
-                                internalFiles.append(item)
-                            } else {
+                            if TextFormat.doesHasPrefix(item.path, "USB/") {
                                 usbFiles.append(item)
+                            } else if TextFormat.doesHasPrefix(item.path, "USB_PRINTS/") {
+                                usbSavedFiles.append(item)
+                            } else {
+                                internalFiles.append(item)
                             }
                         }
                         ready.toggle()
@@ -32,7 +35,7 @@ struct FileFetch: View {
         
         if ready {
             
-            FileListView(internalFiles: $internalFiles, usbFiles: $usbFiles)
+            FileListView(internalFiles: $internalFiles, usbFiles: $usbFiles, usbSavedFiles: $usbSavedFiles)
                 .refreshable {
                     ready.toggle()
                 }

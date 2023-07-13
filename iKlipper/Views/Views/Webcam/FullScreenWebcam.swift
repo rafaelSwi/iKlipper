@@ -20,6 +20,14 @@ struct FullScreenWebcam: View {
     
     var body: some View {
         
+        var rectanglewidth: CGFloat {
+            DeviceModel.deviceClassification() == .small ? 565 : 635
+        }
+        
+        var rectangleHeight: CGFloat {
+            DeviceModel.deviceClassification() == .small ? 324 : 365
+        }
+        
         VStack {
             
             Spacer()
@@ -28,12 +36,12 @@ struct FullScreenWebcam: View {
                 
                 Rectangle()
                     .foregroundColor(.gray)
-                    .frame(width: 635, height: 365)
+                    .frame(width: rectanglewidth, height: rectangleHeight)
                     .cornerRadius(15)
                 
                 webcam.stream
                     .resizable()
-                    .frame(width: 620, height: 350)
+                    .frame(width: (rectanglewidth - 19), height: (rectangleHeight - 19))
                     .onAppear {
                         webcam.play (
                             url: URL(string: printerInfo.main.webcam)!,

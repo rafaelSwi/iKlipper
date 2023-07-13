@@ -52,13 +52,16 @@ struct PrintingScreen: View {
             .foregroundColor(.gray)
     }
     
+    func smallSize () -> Bool {
+        DeviceModel.deviceClassification() == .small ? true : false
+    }
+    
     // n = Name; ic = icon; v = value; c = color;
     func infoDisplay (n: String, ic: String, v: Int, c: Color, _ tag: String) -> some View {
         ZStack {
             Rectangle()
-                .frame(width: 205, height: 25, alignment: .trailing)
+                .frame(width: 225, height: 25, alignment: .trailing)
                 .foregroundColor(c)
-                .offset(x: -8)
                 .opacity(0.2)
                 .blur(radius: 20)
             VStack {
@@ -68,13 +71,11 @@ struct PrintingScreen: View {
                     Spacer()
                     Text ("\(v)\(tag)")
                         .font(.callout)
-                        .padding(.horizontal)
                 }
-                .frame(width: 205, height: 20, alignment: .trailing)
+                .frame(width: 225, height: 20, alignment: .trailing)
                 Rectangle()
-                    .frame(width: 195, height: 2)
+                    .frame(width: 225, height: 2)
                     .foregroundColor(c)
-                    .offset(x: -8)
             }
             .padding(.top)
         }
@@ -116,7 +117,10 @@ struct PrintingScreen: View {
                     }
                     
                 }
-                .frame(width: 180, height: 180)
+                .frame (
+                    width: smallSize() ? 110 : 180,
+                    height: smallSize() ? 110 : 180
+                )
                 .padding(.all)
                 .opacity(isPaused(state: state) ? 0.3 : 1.0)
                 .blur(radius: isPaused(state: state) ? 10 : 0)
@@ -174,6 +178,7 @@ struct PrintingScreen: View {
                 h: 50,
                 cr: 12
             )
+            .padding(.bottom)
             .onTapGesture {
                 viewCamera.toggle()
             }

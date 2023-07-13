@@ -42,7 +42,7 @@ final class TextFormat {
     
     static func beauty (_ string: String, _ method: TextFormat.ParenthesesContentMethod) -> String {
         var str = string
-        let prefixes = ["USB/", "SX1", "SX2"]
+        let prefixes = ["USB/", "USB_PRINTS/", "SX1", "SX2"]
         for prefix in prefixes {
             if str.uppercased().hasPrefix(prefix) {
                 for _ in 0...prefix.count {
@@ -68,7 +68,7 @@ final class TextFormat {
     
     static func doesHasPrefix (_ filepath: String, _ prfx: String) -> Bool {
         let fp: String = filepath.uppercased()
-        return fp.hasPrefix(prfx) || fp.hasPrefix("USB/\(prfx)")
+        return fp.hasPrefix(prfx) || fp.hasPrefix("USB/\(prfx)") || fp.hasPrefix("USB_PRINTS/\(prfx)")
     }
     
 }
