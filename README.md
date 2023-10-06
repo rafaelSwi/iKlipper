@@ -1,23 +1,27 @@
 # About the App
-This is an iOS app focused on being quick access to actions on Syncraft Printers, such as Printing, tracking prints, and tracking other general Printer statuses.
+This is an iOS app focused on being quick access to actions on Syncraft Printers, such as Printing, and tracking other general Printer statuses.
 
 ## Moonraker
 This app uses the Moonraker API to communicate with Syncraft, which works on top of Klipper.
 Attempting to use this app on a different printer may result in unexpected results.
 
-## Demonstration Images (UNDER DEV.)
+## Main Menu
+![main_menu](https://github.com/rafaelSwi/iKlipper/assets/110249038/45556288-d255-410d-a065-2c4b3b6d7c6b)
 
-### Operational
-![operational_tab](https://github.com/rafaelSwi/iKlipper/assets/110249038/20065992-b49f-4ec1-813a-47663906a32d)
+## Webcam
+![webcam](https://github.com/rafaelSwi/iKlipper/assets/110249038/6ddbf51f-1f1c-4f0b-b264-2bec1cae9564)
 
-### Webcam
-![webcam_tab](https://github.com/rafaelSwi/iKlipper/assets/110249038/b31a52f2-c21f-42c8-8d9f-6bde472b12a8)
+## Printing
+![printing](https://github.com/rafaelSwi/iKlipper/assets/110249038/d4decb83-ce66-4bd3-849e-bdddfe9a21f4)
 
-### Printing
-![printing_tab](https://github.com/rafaelSwi/iKlipper/assets/110249038/4fda95f2-5106-44b3-b0d5-641307e79259)
+## Add New Printer
+![add_new_pr](https://github.com/rafaelSwi/iKlipper/assets/110249038/1a43fe00-aa24-4006-af2e-d713e9e73155)
 
-### Add New Printer
-![addnewprinter_tab](https://github.com/rafaelSwi/iKlipper/assets/110249038/8afcdbec-f371-4bd8-9de4-7a01114179b5)
+## Settings
+![settings](https://github.com/rafaelSwi/iKlipper/assets/110249038/e564a091-165a-4851-b80d-21f3786a633e)
 
-### File
-![fileview_tab](https://github.com/rafaelSwi/iKlipper/assets/110249038/b27e9237-cf2c-4db8-a5dd-f9473b17703f)
+## Main Menu (first use)
+![empty](https://github.com/rafaelSwi/iKlipper/assets/110249038/558f1da3-7f8e-414c-bf43-1d7a065d9269)
+
+## File
+![file_example](https://github.com/rafaelSwi/iKlipper/assets/110249038/099256f9-947c-4e36-aadc-0c264795eb80)
