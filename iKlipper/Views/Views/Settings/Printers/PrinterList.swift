@@ -92,21 +92,6 @@ struct PrinterList: View {
             
             Spacer ()
             
-            DefaultView.Custom.IconTextButton (
-                text: "Add Printer with Random ID",
-                systemName: "flag.checkered.circle.fill",
-                w: 205,
-                h: 78,
-                cr: 34
-            )
-            .onTapGesture {
-                printerInfo.addPrinter(Printer(name: "PD01", ip: "pd01.local", port: 80, https: false, model: .x1))
-                printerInfo.addPrinter(Printer(name: "SCX12", ip: "scx10012.local", port: 80, https: false, model: .x1))
-                printerInfo.addPrinter(Printer(name: "maf.01", ip: "manufatura01.local", port: 80, https: false, model: .x1))
-                printerInfo.addPrinter(Printer(name: "SCX_LOCAL", ip: "scx.local", port: 80, https: false, model: .x1))
-                printerInfo.addPrinter(Printer(name: "ghost", ip: "127.0.0.1", port: 80, https: false, model: .x1))
-            }
-            
             DefaultView.ReturnButton()
                 .onTapGesture {
                     presentationMode.wrappedValue.dismiss()

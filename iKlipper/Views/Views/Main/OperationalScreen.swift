@@ -16,7 +16,7 @@ struct OperationalScreen: View {
     
     @State var extruder = DisplayableInfo(name: "Extruder", color: .red, icon: "flame.fill", tag: "°")
     @State var heaterBed = DisplayableInfo(name: "Heater Bed", color: .blue, icon: "bed.double.fill", tag: "°")
-    @State var chamberFan = DisplayableInfo(name: "Chamber Fan", color: .green, icon: "wind.circle.fill", tag: "°")
+    @State var chamberFan = DisplayableInfo(name: "Chamber Fan", color: .purple, icon: "wind.circle.fill", tag: "°")
     
     func statusColor (_ color: Color, _ status: PrinterState.State) -> Color {
         if status == .offline {
