@@ -1,4 +1,5 @@
 import Foundation
+import SwiftUI
 
 /// Class where it stores the Application's main settings, which can be modified by the user
 final public class MainSettings: ObservableObject {
@@ -12,23 +13,23 @@ final public class MainSettings: ObservableObject {
     static var camOptions: [WebcamPerformance] = [
         WebcamPerformance (
             time: 1.1,
-            name: "Slow",
-            description: "Recommended for poor Internet connections."
+            name: String(localized: "settings.webcamperf.slow.title"),
+            description: String(localized: "settings.webcamperf.slow.desc")
         ),
         WebcamPerformance (
             time: 0.45,
-            name: "Normal",
-            description: "Decent performance with low data usage."
+            name: String(localized: "settings.webcamperf.normal.title"),
+            description: String(localized: "settings.webcamperf.normal.desc")
         ),
         WebcamPerformance (
             time: 0.25,
-            name: "Fast",
-            description: "Slightly better than Normal."
+            name: String(localized: "settings.webcamperf.fast.title"),
+            description: String(localized: "settings.webcamperf.fast.desc")
         ),
         WebcamPerformance (
             time: 0.1,
-            name: "Max",
-            description: "Use as much data as possible."
+            name: String(localized: "settings.webcamperf.max.title"),
+            description: String(localized: "settings.webcamperf.max.desc")
         ),
     ]
     

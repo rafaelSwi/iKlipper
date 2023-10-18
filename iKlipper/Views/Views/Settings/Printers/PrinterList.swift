@@ -39,10 +39,10 @@ struct PrinterList: View {
         
         VStack {
             
-            Text ("Printers")
+            Text (String(localized: "settings.printers.title"))
                 .font(.system(size: 50))
             
-            Text ("Active: \(activeName)")
+            Text ("\(String(localized: "settings.printers.active")) \(activeName)")
                 .font(.system(size: 19))
                 .foregroundColor(.gray)
             

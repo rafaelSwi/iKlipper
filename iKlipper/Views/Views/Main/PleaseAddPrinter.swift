@@ -27,10 +27,10 @@ struct PleaseAddPrinter: View {
         }
         .padding(.all)
         
-        Text("Add a Printer")
+        Text(String(localized: "main.empty.add_printer_title"))
             .font(.system(size: 38).bold())
         
-        Text ("Add a Printer and mark it as active.")
+        Text (String(localized: "main.empty.add_and_activate"))
             .font(.subheadline)
             .foregroundColor(.gray)
             .multilineTextAlignment(.center)
@@ -39,7 +39,7 @@ struct PleaseAddPrinter: View {
         VStack {
             
             DefaultView.Custom.IconTextButton (
-                text: "Printer List",
+                text: String(localized: "main.empty.printer_list"),
                 systemName: "list.bullet.rectangle",
                 w: 315,
                 h: 65,
@@ -53,7 +53,7 @@ struct PleaseAddPrinter: View {
             }
             
             DefaultView.Custom.IconTextButton (
-                text: "Add Printer",
+                text: String(localized: "main.empty.add_printer"),
                 systemName: "plus",
                 w: 315,
                 h: 45,

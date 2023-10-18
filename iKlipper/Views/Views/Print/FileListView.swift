@@ -16,7 +16,7 @@ struct FileListView: View {
         ScrollView {
             
             Group {
-                Text (internalFiles.isEmpty ? "" : "Internal Files")
+                Text (internalFiles.isEmpty ? "" : String(localized: "print.filelist.internal_files"))
                     .font(.title2)
                     .bold()
                 ForEach(internalFiles) { file in
@@ -25,7 +25,7 @@ struct FileListView: View {
             }
             
             Group {
-                Text (usbFiles.isEmpty ? "" : "USB Files")
+                Text (usbFiles.isEmpty ? "" : String(localized: "print.filelist.usb_files"))
                     .font(.title2)
                     .bold()
                     .padding(.top)
@@ -35,7 +35,7 @@ struct FileListView: View {
             }
             
             Group {
-                Text (usbFiles.isEmpty ? "" : "Saved from USB")
+                Text (usbFiles.isEmpty ? "" : String(localized: "print.filelist.saved_from_usb"))
                     .font(.title2)
                     .bold()
                     .padding(.top)

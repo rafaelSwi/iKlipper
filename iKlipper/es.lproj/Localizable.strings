@@ -1,0 +1,82 @@
+// --- BOTTOM NAV BAR
+"bottomnavbar.settings" = "Ajustes";
+"bottomnavbar.printer" = "Estado";
+
+// --- AJUSTES
+
+// cámara web
+"settings.webcamperf.title" = "Conexión de Cámara";
+"settings.webcamperf.slow.title" = "Bajo";
+"settings.webcamperf.normal.title" = "Normal";
+"settings.webcamperf.fast.title" = "Alto";
+"settings.webcamperf.max.title" = "Máximo";
+"settings.webcamperf.slow.desc" = "Recomendado para conexiones de internet lentas.";
+"settings.webcamperf.normal.desc" = "Balance entre rendimiento y uso de datos.";
+"settings.webcamperf.fast.desc" = "Un poco mejor que el modo Normal.";
+"settings.webcamperf.max.desc" = "Utiliza la máxima cantidad de datos posible.";
+
+// impresoras
+"settings.printers.title" = "Impresoras";
+"settings.printers.active" = "En uso:";
+
+// --- PRINCIPAL
+
+// pantalla de impresión
+
+"main.printing.pause" = "Pausar";
+"main.printing.resume" = "Reanudar";
+"main.printing.cancel" = "Cancelar";
+"main.printing.progress" = "Progreso";
+"main.printing.extruder" = "Extrusor";
+"main.printing.heater_bed" = "Mesa";
+"main.printing.open_camera" = "Abrir Cámara";
+
+// pantalla operativa
+
+"main.operational.extruder" = "Extrusor";
+"main.operational.heater_bed" = "Mesa";
+"main.operational.chamber_fan" = "Ventilador de Cámara";
+"main.operational.camera" = "Cámara";
+
+// vacío
+
+"main.empty.add_printer_title" = "Comience a Usar";
+"main.empty.add_printer" = "Agregar Impresora";
+"main.empty.add_and_activate" = "Agregue una impresora y establézcala como principal.";
+"main.empty.printer_list" = "Lista de Impresoras";
+
+// --- CÁMARA WEB
+
+// vista previa
+
+"webcam.preview.reload_connection" = "Recargar Conexión";
+"webcam.preview.view_full_screen" = "Pantalla Completa";
+
+// --- IMPRIMIR
+
+// lista de archivos
+
+"print.filelist.internal_files" = "Archivos Internos";
+"print.filelist.usb_files" = "Archivos USB";
+"print.filelist.saved_from_usb" = "Guardados desde USB";
+
+// añadir nueva impresora
+
+"print.add_new.title" = "Agregar Nueva";
+"print.add_new.printer_name" = "Nombre";
+"print.add_new.printer_ip" = "IP";
+"print.add_new.port" = "PORT";
+"print.add_new.https" = "HTTPS";
+"print.add_new.model" = "Modelo";
+"print.add_new.add_printer" = "Agregar Impresora";
+
+// editar impresora
+
+"print.edit_printer.title" = "Editar";
+"print.edit_printer.printer_name" = "Nombre";
+"print.edit_printer.printer_ip" = "IP";
+"print.edit_printer.port" = "PORT";
+"print.edit_printer.https" = "HTTPS";
+"print.edit_printer.model" = "Modelo";
+"print.edit_printer.delete_printer" = "Eliminar Impresora";
+"print.edit_printer.save_changes" = "Guardar Cambios";

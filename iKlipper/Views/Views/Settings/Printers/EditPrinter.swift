@@ -22,14 +22,14 @@ struct EditPrinter: View {
     
     var body: some View {
         
-        Text ("Edit Printer")
+        Text (String(localized: "print.edit_printer.title"))
             .font(.system(size: 44))
             .padding(.all)
         
         Spacer ()
         
         Group {
-            TextField("Printer Name", text: $printer.name)
+            TextField(String(localized: "print.edit_printer.printer_name"), text: $printer.name)
                 .focused($typingFocused)
                 .textFieldStyle(AddPrinterTextFieldStyle())
                 .padding(.top)
@@ -38,7 +38,7 @@ struct EditPrinter: View {
         }
         
         Group {
-            TextField("IP Address", text: $printer.ip)
+            TextField(String(localized: "print.edit_printer.printer_ip"), text: $printer.ip)
                 .focused($typingFocused)
                 .textFieldStyle(AddPrinterTextFieldStyle())
                 .padding(.top)
@@ -47,7 +47,7 @@ struct EditPrinter: View {
         }
         
         Group {
-            TextField("Port", value: $printer.port, format: .number)
+            TextField(String(localized: "print.edit_printer.port"), value: $printer.port, format: .number)
                 .focused($typingFocused)
                 .textFieldStyle(AddPrinterTextFieldStyle())
                 .keyboardType(.numberPad)
@@ -58,7 +58,7 @@ struct EditPrinter: View {
         }
         
         Group {
-            Text ("HTTPS Encryption")
+            Text (String(localized: "print.edit_printer.https"))
                 .font(.subheadline)
                 .padding(.top)
                 .foregroundColor(.gray)
@@ -71,7 +71,7 @@ struct EditPrinter: View {
         }
         
         Group {
-            Picker ("Model", selection: $printer.model) {
+            Picker (String(localized: "print.edit_printer.model"), selection: $printer.model) {
                 ForEach(models, id: \.self) { model in
                     Text ("\(model.rawValue)")
                 }
@@ -84,7 +84,7 @@ struct EditPrinter: View {
         
         if !typingFocused {
             DefaultView.Custom.IconTextButton (
-                text: "Delete Printer",
+                text: String(localized: "print.edit_printer.delete_printer"),
                 systemName: "trash",
                 w: 280,
                 h: 35,
@@ -95,7 +95,7 @@ struct EditPrinter: View {
                     presentationMode.wrappedValue.dismiss()
                 }
             DefaultView.Custom.IconTextButton (
-                text: "Save Changes",
+                text: String(localized: "print.edit_printer.save_changes"),
                 systemName: "square.and.arrow.down",
                 w: 280,
                 h: 40,

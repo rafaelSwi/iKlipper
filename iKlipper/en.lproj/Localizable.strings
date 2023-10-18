@@ -1,0 +1,82 @@
+// --- BOTTOM NAV BAR
+"bottomnavbar.settings" = "Settings";
+"bottomnavbar.printer" = "Printer";
+
+// --- SETTINGS
+
+// webcam
+"settings.webcamperf.title" = "Webcam Performance";
+"settings.webcamperf.slow.title" = "Slow";
+"settings.webcamperf.normal.title" = "Normal";
+"settings.webcamperf.fast.title" = "Fast";
+"settings.webcamperf.max.title" = "Max";
+"settings.webcamperf.slow.desc" = "Recommended for poor Internet connections.";
+"settings.webcamperf.normal.desc" = "Decent performance with low data usage.";
+"settings.webcamperf.fast.desc" = "Slightly better than Normal.";
+"settings.webcamperf.max.desc" = "Use as much data as possible.";
+
+// printers
+"settings.printers.title" = "Printers";
+"settings.printers.active" = "Active:";
+
+// --- MAIN
+
+// printing screen
+
+"main.printing.pause" = "Pause";
+"main.printing.resume" = "Resume";
+"main.printing.cancel" = "Cancel";
+"main.printing.progress" = "Progress";
+"main.printing.extruder" = "Extruder";
+"main.printing.heater_bed" = "Heater Bed";
+"main.printing.open_camera" = "Open Camera";
+
+// operational screen
+
+"main.operational.extruder" = "Extruder";
+"main.operational.heater_bed" = "Heater Bed";
+"main.operational.chamber_fan" = "Fan";
+"main.operational.camera" = "Camera";
+
+// empty
+
+"main.empty.add_printer_title" = "Add a Printer";
+"main.empty.add_printer" = "Add Printer";
+"main.empty.add_and_activate" = "Add a Printer and mark it as active.";
+"main.empty.printer_list" = "Printer List";
+
+// --- WEBCAM
+
+// preview
+
+"webcam.preview.reload_connection" = "Reload Connection";
+"webcam.preview.view_full_screen" = "View in Full Screen";
+
+// --- PRINT
+
+// file list
+
+"print.filelist.internal_files" = "Internal Files";
+"print.filelist.usb_files" = "USB Files";
+"print.filelist.saved_from_usb" = "Saved From USB";
+
+// add new printer
+
+"print.add_new.title" = "Add New Printer";
+"print.add_new.printer_name" = "Printer Name";
+"print.add_new.printer_ip" = "IP Address";
+"print.add_new.port" = "Port";
+"print.add_new.https" = "HTTPS Encryption";
+"print.add_new.model" = "Syncraft Model";
+"print.add_new.add_printer" = "Add Printer";
+
+// edit printer
+
+"print.edit_printer.title" = "Edit Printer";
+"print.edit_printer.printer_name" = "Printer Name";
+"print.edit_printer.printer_ip" = "IP Address";
+"print.edit_printer.port" = "Port";
+"print.edit_printer.https" = "HTTPS Encryption";
+"print.edit_printer.model" = "Syncraft Model";
+"print.edit_printer.delete_printer" = "Delete Printer";
+"print.edit_printer.save_changes" = "Save Changes";

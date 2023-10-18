@@ -22,14 +22,14 @@ struct AddNewPrinter: View {
     
     var body: some View {
         
-        Text ("Add New Printer")
+        Text (String(localized: "print.add_new.title"))
             .font(.system(size: 44))
             .padding(.all)
         
         Spacer ()
         
         Group {
-            TextField("Printer Name", text: $printer.name)
+            TextField(String(localized: "print.add_new.printer_name"), text: $printer.name)
                 .focused($typingFocused)
                 .textFieldStyle(AddPrinterTextFieldStyle())
                 .padding(.top)
@@ -38,7 +38,7 @@ struct AddNewPrinter: View {
         }
         
         Group {
-            TextField("IP Address", text: $printer.ip)
+            TextField(String(localized: "print.add_new.printer_ip"), text: $printer.ip)
                 .focused($typingFocused)
                 .textFieldStyle(AddPrinterTextFieldStyle())
                 .padding(.top)
@@ -47,7 +47,7 @@ struct AddNewPrinter: View {
         }
         
         Group {
-            TextField("Port", value: $printer.port, format: .number)
+            TextField(String(localized: "print.add_new.port"), value: $printer.port, format: .number)
                 .focused($typingFocused)
                 .textFieldStyle(AddPrinterTextFieldStyle())
                 .keyboardType(.numberPad)
@@ -58,7 +58,7 @@ struct AddNewPrinter: View {
         }
         
         Group {
-            Text ("HTTPS Encryption")
+            Text (String(localized: "print.add_new.https"))
                 .font(.subheadline)
                 .padding(.top)
                 .foregroundColor(.gray)
@@ -71,10 +71,10 @@ struct AddNewPrinter: View {
         }
         
         Group {
-            Text ("Syncraft Model")
+            Text (String(localized: "print.add_new.model"))
                 .font(.system(size: 22))
                 .fontWeight(.thin)
-            Picker ("Model", selection: $printer.model) {
+            Picker (String(localized: "print.add_new.model"), selection: $printer.model) {
                 ForEach(models, id: \.self) { model in
                     Text ("\(model.rawValue)")
                 }
@@ -86,7 +86,7 @@ struct AddNewPrinter: View {
         Spacer()
         
         if !typingFocused {
-            DefaultView.Custom.IconTextButton(text: "Add Printer", systemName: "plus", w: 280, h: 40, cr: 28)
+            DefaultView.Custom.IconTextButton(text: String(localized: "print.add_new.add_printer"), systemName: "plus", w: 280, h: 40, cr: 28)
                 .onTapGesture {
                     if !emptyFields() {
                         printerInfo.addPrinter(self.printer)

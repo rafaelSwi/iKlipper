@@ -23,6 +23,7 @@
 		3471D05329FCB73800C3BDB9 /* GET Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05229FCB73800C3BDB9 /* GET Functions.swift */; };
 		3471D05629FCB75E00C3BDB9 /* GET Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3471D05529FCB75E00C3BDB9 /* GET Structs.swift */; };
 		34C5D7462A291E8D006D3937 /* PrintingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C5D7452A291E8D006D3937 /* PrintingScreen.swift */; };
+		5363EF932AE048AE005FC1C6 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5363EF952AE048AE005FC1C6 /* Localizable.strings */; };
 		6F01A4982A4F3DFC00E741CC /* FullScreenWebcam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F01A4972A4F3DFC00E741CC /* FullScreenWebcam.swift */; };
 		6F02F7722A549BE400EB763D /* PrintStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F02F7712A549BE400EB763D /* PrintStats.swift */; };
 		6F6FB4442A5346E1002B25EF /* PrinterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6FB4432A5346E1002B25EF /* PrinterState.swift */; };
@@ -59,6 +60,10 @@
 		3471D05229FCB73800C3BDB9 /* GET Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GET Functions.swift"; sourceTree = "<group>"; };
 		3471D05529FCB75E00C3BDB9 /* GET Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GET Structs.swift"; sourceTree = "<group>"; };
 		34C5D7452A291E8D006D3937 /* PrintingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintingScreen.swift; sourceTree = "<group>"; };
+		5363EF942AE048AE005FC1C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5363EF972AE05460005FC1C6 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5363EF982AE054D9005FC1C6 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5363EF992AE05617005FC1C6 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6F01A4972A4F3DFC00E741CC /* FullScreenWebcam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenWebcam.swift; sourceTree = "<group>"; };
 		6F02F7712A549BE400EB763D /* PrintStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintStats.swift; sourceTree = "<group>"; };
 		6F6FB4432A5346E1002B25EF /* PrinterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterState.swift; sourceTree = "<group>"; };
@@ -107,6 +112,7 @@
 		3471D02629FCB54100C3BDB9 /* iKlipper */ = {
 			isa = PBXGroup;
 			children = (
+				5363EF952AE048AE005FC1C6 /* Localizable.strings */,
 				3471D02729FCB54100C3BDB9 /* iKlipperApp.swift */,
 				3471D02B29FCB54400C3BDB9 /* Assets.xcassets */,
 				6FDA20402A4F339600E6355A /* Classes */,
@@ -345,6 +351,9 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
+				es,
+				pl,
 			);
 			mainGroup = 3471D01B29FCB54100C3BDB9;
 			productRefGroup = 3471D02529FCB54100C3BDB9 /* Products */;
@@ -362,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3471D02F29FCB54400C3BDB9 /* Preview Assets.xcassets in Resources */,
+				5363EF932AE048AE005FC1C6 /* Localizable.strings in Resources */,
 				3471D02C29FCB54400C3BDB9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +417,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5363EF952AE048AE005FC1C6 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5363EF942AE048AE005FC1C6 /* en */,
+				5363EF972AE05460005FC1C6 /* pt-BR */,
+				5363EF982AE054D9005FC1C6 /* es */,
+				5363EF992AE05617005FC1C6 /* pl */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		3471D03029FCB54400C3BDB9 /* Debug */ = {
@@ -534,6 +558,7 @@
 				DEVELOPMENT_TEAM = 834WJG58A6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iKlipper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -563,6 +588,7 @@
 				DEVELOPMENT_TEAM = 834WJG58A6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iKlipper/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

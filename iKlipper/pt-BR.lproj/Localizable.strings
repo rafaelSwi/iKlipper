@@ -1,0 +1,82 @@
+// --- BOTTOM NAV BAR
+"bottomnavbar.settings" = "Ajustes";
+"bottomnavbar.printer" = "Status";
+
+// --- SETTINGS
+
+// webcam
+"settings.webcamperf.title" = "Perfomance da Câmera";
+"settings.webcamperf.slow.title" = "Baixo";
+"settings.webcamperf.normal.title" = "Normal";
+"settings.webcamperf.fast.title" = "Alto";
+"settings.webcamperf.max.title" = "Max";
+"settings.webcamperf.slow.desc" = "Recomendado para Internet fracas.";
+"settings.webcamperf.normal.desc" = "Balanço entre perfomance e uso de dados.";
+"settings.webcamperf.fast.desc" = "Um pouco melhor que o Normal.";
+"settings.webcamperf.max.desc" = "Utiliza o máximo possível de dados.";
+
+// printers
+"settings.printers.title" = "Impressoras";
+"settings.printers.active" = "Em Uso:";
+
+// --- MAIN
+
+// printing screen
+
+"main.printing.pause" = "Pausar";
+"main.printing.resume" = "Retornar";
+"main.printing.cancel" = "Cancelar";
+"main.printing.progress" = "Progresso";
+"main.printing.extruder" = "Extrusor";
+"main.printing.heater_bed" = "Mesa";
+"main.printing.open_camera" = "Abrir Câmera";
+
+// operational screen
+
+"main.operational.extruder" = "Extrusor";
+"main.operational.heater_bed" = "Mesa";
+"main.operational.chamber_fan" = "Ventoinha";
+"main.operational.camera" = "Câmera";
+
+// empty
+
+"main.empty.add_printer_title" = "Comece a Usar";
+"main.empty.add_printer" = "Adicionar Impressora";
+"main.empty.add_and_activate" = "Adicione uma Impressora, e a defina como principal.";
+"main.empty.printer_list" = "Lista de Impressoras";
+
+// --- WEBCAM
+
+// preview
+
+"webcam.preview.reload_connection" = "Recarregar";
+"webcam.preview.view_full_screen" = "Tela Cheia";
+
+// --- PRINT
+
+// file list
+
+"print.filelist.internal_files" = "Arquivos Internos";
+"print.filelist.usb_files" = "Arquivos no USB";
+"print.filelist.saved_from_usb" = "Salvos do USB";
+
+// add new printer
+
+"print.add_new.title" = "Adicionar";
+"print.add_new.printer_name" = "Nome";
+"print.add_new.printer_ip" = "IP";
+"print.add_new.port" = "Porta";
+"print.add_new.https" = "HTTPS";
+"print.add_new.model" = "Modelo da Syncraft";
+"print.add_new.add_printer" = "Adicionar Impressora";
+
+// edit printer
+
+"print.edit_printer.title" = "Editar";
+"print.edit_printer.printer_name" = "Nome";
+"print.edit_printer.printer_ip" = "IP";
+"print.edit_printer.port" = "Porta";
+"print.edit_printer.https" = "HTTPS";
+"print.edit_printer.model" = "Modelo da Syncraft";
+"print.edit_printer.delete_printer" = "Deletar Impressora";
+"print.edit_printer.save_changes" = "Salvar Alterações";

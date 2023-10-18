@@ -12,13 +12,13 @@ struct BottomNavBar: View {
                 Settings()
                     .tabItem {
                         Image(systemName: "gearshape")
-                        Text("Settings")
+                        Text(String(localized: "bottomnavbar.settings"))
                     }
                 
                 MainScreenLoader()
                     .tabItem {
                         Image(systemName: "cube.transparent")
-                        Text("Printer")
+                        Text(String(localized: "bottomnavbar.printer"))
                     }
             }
         }

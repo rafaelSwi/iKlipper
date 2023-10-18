@@ -53,7 +53,7 @@ struct WebcamView: View {
             }
             
             DefaultView.Custom.IconTextButton (
-                text: "Reload Connection",
+                text: String(localized: "webcam.preview.reload_connection"),
                 systemName: "arrow.clockwise",
                 w: 235,
                 h: 45,
@@ -67,7 +67,7 @@ struct WebcamView: View {
             }
             
             DefaultView.Custom.IconTextButton (
-                text: "View in Full Screen",
+                text: String(localized: "webcam.preview.view_full_screen"),
                 systemName: "ipad.landscape.badge.play",
                 w: 235,
                 h: 45,

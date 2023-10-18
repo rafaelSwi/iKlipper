@@ -18,7 +18,7 @@ struct Settings: View {
                 HStack {
                     
                     DefaultView.Custom.IconTextButton (
-                        text: "Printers",
+                        text: String(localized: "settings.printers.title"),
                         systemName: "list.bullet.rectangle",
                         w: 250,
                         h: 65,
@@ -46,11 +46,11 @@ struct Settings: View {
                     
                 }
                 
-                Text ("Webcam Performance")
+                Text (String(localized: "settings.webcamperf.title"))
                     .font(.title)
                     .offset(y: 52)
                 
-                Picker("Webcam Performance", selection: $settings.camPerformance) {
+                Picker(String(localized: "settings.webcamperf.title"), selection: $settings.camPerformance) {
                     ForEach(MainSettings.camOptions, id: \.self) { option in
                         Text ("\(option.name)")
                     }

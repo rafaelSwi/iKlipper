@@ -14,9 +14,9 @@ struct OperationalScreen: View {
         "chamber_fan": []
     ]
     
-    @State var extruder = DisplayableInfo(name: "Extruder", color: .red, icon: "flame.fill", tag: "°")
-    @State var heaterBed = DisplayableInfo(name: "Heater Bed", color: .blue, icon: "bed.double.fill", tag: "°")
-    @State var chamberFan = DisplayableInfo(name: "Chamber Fan", color: .purple, icon: "wind.circle.fill", tag: "°")
+    @State var extruder = DisplayableInfo(name: String(localized: "main.operational.extruder"), color: .red, icon: "flame.fill", tag: "°")
+    @State var heaterBed = DisplayableInfo(name: String(localized: "main.operational.heater_bed"), color: .blue, icon: "bed.double.fill", tag: "°")
+    @State var chamberFan = DisplayableInfo(name: String(localized: "main.operational.chamber_fan"), color: .purple, icon: "wind.circle.fill", tag: "°")
     
     func statusColor (_ color: Color, _ status: PrinterState.State) -> Color {
         if status == .offline {
@@ -76,7 +76,7 @@ struct OperationalScreen: View {
             Spacer()
             
             DefaultView.Custom.IconTextButton (
-                text: "Camera",
+                text: String(localized: "main.operational.camera"),
                 systemName: "camera.aperture",
                 w: 235,
                 h: 45,

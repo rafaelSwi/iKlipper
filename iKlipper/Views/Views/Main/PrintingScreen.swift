@@ -14,13 +14,13 @@ struct PrintingScreen: View {
     
     @State var printStats: PrintStats = PrintStats (image: UIImage(systemName: "cube")!, filePath: " ", fileSize: 0, fileName: " ", progress: 0, totalDuration: 0, printDuration: 0, filamentUsed: 0)
     
-    @State var progress = DisplayableInfo(name: "Progress", color: .white, icon: "figure.run", tag: "%")
-    @State var extruder = DisplayableInfo(name: "Extruder", color: .red, icon: "flame.fill", tag: "°")
-    @State var heaterBed = DisplayableInfo(name: "Heater Bed", color: .blue, icon: "bed.double.fill", tag: "°")
+    @State var progress = DisplayableInfo(name: String(localized: "main.printing.progress"), color: .white, icon: "figure.run", tag: "%")
+    @State var extruder = DisplayableInfo(name: String(localized: "main.printing.extruder"), color: .red, icon: "flame.fill", tag: "°")
+    @State var heaterBed = DisplayableInfo(name: String(localized: "main.printing.heater_bed"), color: .blue, icon: "bed.double.fill", tag: "°")
     
     var pauseButton: some View {
         DefaultView.Custom.IconTextButton (
-            text: "Pause",
+            text: String(localized: "main.printing.pause"),
             systemName: "pause.circle",
             w: 145,
             h: 55,
@@ -30,7 +30,7 @@ struct PrintingScreen: View {
     
     var resumeButton: some View {
         DefaultView.Custom.IconTextButton (
-            text: "Resume",
+            text: String(localized: "main.printing.resume"),
             systemName: "play.circle",
             w: 145,
             h: 55,
@@ -155,7 +155,7 @@ struct PrintingScreen: View {
                 }
                 
                 DefaultView.Custom.IconTextButton (
-                    text: "Cancel",
+                    text: String(localized: "main.printing.cancel"),
                     systemName: "xmark.circle",
                     w: 145,
                     h: 55,
@@ -172,7 +172,7 @@ struct PrintingScreen: View {
             .padding(.top)
             
             DefaultView.Custom.IconTextButton (
-                text: "Open Camera",
+                text: String(localized: "main.printing.open_camera"),
                 systemName: "camera.aperture",
                 w: 290,
                 h: 50,

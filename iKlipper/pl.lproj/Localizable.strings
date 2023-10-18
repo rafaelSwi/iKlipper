@@ -1,0 +1,82 @@
+// --- PASEK DOLNY
+"bottomnavbar.settings" = "Ustawienia";
+"bottomnavbar.printer" = "Status";
+
+// --- USTAWIENIA
+
+// kamera internetowa
+"settings.webcamperf.title" = "Wydajność Kamery";
+"settings.webcamperf.slow.title" = "Niska";
+"settings.webcamperf.normal.title" = "Normalna";
+"settings.webcamperf.fast.title" = "Wysoka";
+"settings.webcamperf.max.title" = "Maksymalna";
+"settings.webcamperf.slow.desc" = "Zalecane dla słabego połączenia internetowego.";
+"settings.webcamperf.normal.desc" = "Zrównoważona wydajność i zużycie danych.";
+"settings.webcamperf.fast.desc" = "Trochę lepsza niż tryb Normalny.";
+"settings.webcamperf.max.desc" = "Korzysta z maksymalnej ilości danych.";
+
+// drukarki
+"settings.printers.title" = "Drukarki";
+"settings.printers.active" = "Aktywne:";
+
+// --- GŁÓWNE
+
+// ekran drukowania
+
+"main.printing.pause" = "Wstrzymaj";
+"main.printing.resume" = "Wznów";
+"main.printing.cancel" = "Anuluj";
+"main.printing.progress" = "Postęp";
+"main.printing.extruder" = "Wytłaczarka";
+"main.printing.heater_bed" = "Podgrzewany Stół";
+"main.printing.open_camera" = "Otwórz kamerę";
+
+// ekran operacyjny
+
+"main.operational.extruder" = "Wytłaczarka";
+"main.operational.heater_bed" = "Podgrzewany Stół";
+"main.operational.chamber_fan" = "Wachlarz wiatru";
+"main.operational.camera" = "Kamera";
+
+// puste
+
+"main.empty.add_printer_title" = "Zacząć używać";
+"main.empty.add_printer" = "Dodaj drukarkę";
+"main.empty.add_and_activate" = "Dodaj drukarkę i ustaw ją jako główną.";
+"main.empty.printer_list" = "Lista drukarek";
+
+// --- KAMERA INTERNETOWA
+
+// podgląd
+
+"webcam.preview.reload_connection" = "odświeżyć";
+"webcam.preview.view_full_screen" = "Pełny ekran";
+
+// --- DRUKUJ
+
+// lista plików
+
+"print.filelist.internal_files" = "Pliki wewnętrzne";
+"print.filelist.usb_files" = "Pliki na USB";
+"print.filelist.saved_from_usb" = "Pliki zapisane z USB";
+
+// dodaj nową drukarkę
+
+"print.add_new.title" = "Dodaj nową";
+"print.add_new.printer_name" = "Nazwa";
+"print.add_new.printer_ip" = "IP";
+"print.add_new.port" = "Port";
+"print.add_new.https" = "HTTPS";
+"print.add_new.model" = "Model Syncraft";
+"print.add_new.add_printer" = "Dodaj drukarkę";
+
+// edytuj drukarkę
+
+"print.edit_printer.title" = "Edytuj";
+"print.edit_printer.printer_name" = "Nazwa";
+"print.edit_printer.printer_ip" = "IP";
+"print.edit_printer.port" = "Port";
+"print.edit_printer.https" = "HTTPS";
+"print.edit_printer.model" = "Model Syncraft";
+"print.edit_printer.delete_printer" = "Usuń drukarkę";
+"print.edit_printer.save_changes" = "Zapisz zmiany";
